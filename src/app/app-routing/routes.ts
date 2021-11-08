@@ -1,10 +1,8 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from '../components/home/home.component';
-import { HeaderComponent } from '../header/header.component';
 import { EmployeeComponent } from '../employee/employee.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { FooterComponent } from '../footer/footer.component';
 import { ContactComponent } from '../contact/contact.component';
 import { BarcodeComponent } from '../components/barcode/barcode.component';
 import { InventorycountComponent } from '../components/inventorycount/inventorycount.component';
@@ -94,7 +92,6 @@ export const routes: Routes = [
     { path: 'add', component: CreateUserComponent },
     { path: 'update/:_id', component: UpdateUserComponent },
     { path: 'details/:_id', component: UserDetailsComponent },
-    { path: 'header', component: HeaderComponent },
 
     //   { path: 'dishdetail/:id', component:DishdetailComponent},
     {

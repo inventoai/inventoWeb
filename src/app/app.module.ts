@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,7 +42,6 @@ import { MatRippleModule } from '@angular/material/core';
 import 'hammerjs';
 
 import { EmployeeComponent } from './employee/employee.component';
-import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserService } from './services/user.service';
 import { BarcodeComponent } from './components/barcode/barcode.component';
@@ -156,10 +154,8 @@ const CustomBreakpoints = [{
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     DashboardComponent,
     EmployeeComponent,
-    FooterComponent,
     ContactComponent,
     BarcodeComponent,
     AnalyzereportComponent,

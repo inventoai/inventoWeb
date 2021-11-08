@@ -1,7 +1,7 @@
 <mat-card>
     <form action="">
 
-        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="150px" fxLayoutGap.lt-md="0px">
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="10px">
 
             <mat-form-field fxFlex appearance="outline">
                 <mat-label>Select Date Range</mat-label>
@@ -23,7 +23,7 @@
                 </select>
             </mat-form-field>
 
-            <mat-form-field fxFlex appearance="outline">
+            <!-- <mat-form-field fxFlex appearance="outline">
                 <mat-label>Select Analyze Type</mat-label>
                 <select matNativeControl [disabled]="disableSelect.value">
                     <option value="" selected></option>
@@ -31,7 +31,7 @@
                         {{atype}}
                     </option>
                 </select>
-            </mat-form-field>
+            </mat-form-field> -->
 
             <button fxFlex type="submit"><b>Get Report</b></button>
 

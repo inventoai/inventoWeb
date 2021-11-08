@@ -35,7 +35,7 @@ export class DefaultComponent implements OnInit, OnDestroy {
       shareReplay()
     );
 
-  menuItems1 = ['Dashboard','App Users','Web Users', 'Employee', 'Barcode', 'Inventory Count', 'Advance Slotting', 'Analyze Report',
+  menuItems1 = ['Dashboard','App Users','Web Users',/* 'Employee',*/ 'Barcode', 'Inventory Count', 'Advance Slotting', 'Analyze Report',
     'Forecast', 'Category', 'Product', 'Business Location'];
 
   constructor(private breakpointObserver: BreakpointObserver,
