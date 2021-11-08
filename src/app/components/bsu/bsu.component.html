@@ -1,0 +1,26 @@
+<div class="container">
+
+
+    <form>
+        <div class="input-group">
+            <span class="input-group-addon"><i id="icon" class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon"><i id="icon" class="glyphicon glyphicon-lock"></i></span>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+
+        <div>
+            <button class="bsubutton" type="submit" routerLink="/bsuheader"><b>Log In</b></button>
+        </div>
+    </form>
+
+    <div class="reset">
+        <p><b>Forgot Password?</b>
+            <span class="flex-spacer"></span>
+            <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Reset Password</a>        </p>
+    </div>
+
+</div>

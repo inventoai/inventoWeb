@@ -1,0 +1,85 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <br> <br>
+      <mat-toolbar>
+        <img src="/assets/images/inventoLogo.jpg" alt="Logo" style="margin: 10%;" height="95" width="145">
+      </mat-toolbar>
+      <br> <br>
+      <mat-nav-list>
+        <button matButton *ngFor="let item of menuItems1" mat-list-item
+          [routerLink]="'./'+item"> <b>{{item | titlecase}}</b>
+        </button>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="position: relative;">
+      <div class="fixed-header">
+        <mat-toolbar style="background-color: #0C2531; color: white;">
+        
+          <mat-toolbar-row fxLayoutAlign="space-between center">
+            <div fxLayout="row">
+              <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+              <form  *ngIf="deviceXs">
+                <input type="text" id="search" placeholder="Search ...." name="search">
+              </form>
+              <form *ngIf="!deviceXs">
+                <input type="text" id="search1" placeholder="Search ...." name="search">
+              </form>
+              <button *ngIf="deviceXs" mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+  
+            <div *ngIf="!deviceXs" fxLayout="row">
+              <div class="vl"></div>
+              <p style="margin-top: 3%;">{{todayDate | date:'short':'IST'}}</p>
+              <img matListAvatar src={{users}} alt={{users}} height="50px" width="50px" style="border-radius: 50%; margin-left: 2% ;">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+  
+            <div>
+              <button *ngIf="!deviceXs" mat-button [matMenuTriggerFor]="menu" fxLayoutAlign="end">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+          </mat-toolbar-row>
+          <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
+            <p style="margin-top: 3%;">{{todayDate | date:'short':'IST'}}</p>
+            <p style="margin-top: 4%; margin-right: 3%;">
+              <mat-icon>email</mat-icon>
+            </p>
+            <img matListAvatar src={{users}} alt={{users}} height="50px" width="50px" style="border-radius: 50%;">
+  
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-menu #menu="matMenu" fxLayoutAlign="end">
+          <button mat-menu-item class="nav-item nav-link" (click)="logout()">Logout</button>
+        </mat-menu>
+      </div>
+  
+      <div class="fixed-content" >
+        <router-outlet></router-outlet>
+      </div>
+  
+      
+      <!-- Add Content Here -->
+      <div class="fixed-footer">
+        <section class="ft-legal">
+          <ul class="ft-legal-list">
+            <li><a routerLink="/default/howitworks" routerLinkActive="active"><b>How It Works</b></a></li>
+            <li><a routerLink="/default/contactus" routerLinkActive="active"><b>Contact Us</b></a></li>
+            <li><a routerLink="/default/faqs" routerLinkActive="active"><b>FAQs</b></a></li>
+            <li><a routerLink="/default/terms" routerLinkActive="active"><b>Terms &amp; Conditions</b></a></li>
+            <li><a routerLink="/default/privacy" routerLinkActive="active"><b>Privacy
+                  Policy</b></a></li>
+            <li>&copy;All right received © 2021 Izeetek Solutions</li>
+          </ul>
+        </section>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

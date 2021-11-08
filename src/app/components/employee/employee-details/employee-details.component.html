@@ -1,0 +1,47 @@
+<mat-card>
+
+    <h2>User Details</h2>
+
+    <hr />
+    <div *ngIf="employee">
+        <div>
+            <label><b> Name: </b></label> {{employee.userName}}
+        </div>
+        <div>
+            <label><b>Mobile Number: </b></label> {{employee.mobileNumber}}
+        </div>
+        <div>
+            <label><b>Email Id: </b></label> {{employee.emailId}}
+        </div>
+    </div>
+
+    <div>
+        <label><b> Department: </b></label> {{employee.department}}
+    </div>
+    <div>
+        <label><b>Business Location: </b></label> {{employee.businessLocation}}
+    </div>
+    <div>
+        <label><b>Employee Id: </b></label> {{employee.employeeId}}
+    </div>
+
+    <div>
+        <label><b> State: </b></label> {{employee.state}}
+    </div>
+    <div>
+        <label><b> City: </b></label> {{employee.city}}
+    </div>
+    <div>
+        <label><b>Address : </b></label> {{employee.address}}
+    </div>
+    <div>
+        <label> <b>Avtar:</b> </label> 
+        <img src="employee.avtar" alt="avtar">
+    </div>
+
+
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Back</button><br>
+
+</mat-card>

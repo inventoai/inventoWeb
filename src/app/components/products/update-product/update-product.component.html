@@ -1,0 +1,48 @@
+<mat-card>
+
+    <h3> Update Product</h3>
+    <hr>
+    <div style="width:100%;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Product Id</mat-label>
+                    <input matInput type="text" id="locationId" placeholder="Location Id" required
+                        [(ngModel)]="product.productId" name="productId">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput type="text" id="locationId" placeholder="Location Name" required
+                        [(ngModel)]="product.productName" name="productName">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Category Id</mat-label>
+                    <input matInput type="text" id="categoryId" placeholder="Category Id" required
+                        [(ngModel)]="product.categoryId" name="categoryId">
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Category</mat-label>
+                    <select matNativeControl [disabled]="disableSelect.value" id="categoryName" required
+                      [(ngModel)]="product.categoryName" name="categoryName">
+                      <option value="" selected></option>
+                      <option *ngFor="let ctype of categoryType">
+                        {{ctype}}
+                      </option>
+                    </select>
+                  </mat-form-field>
+
+            </div>
+
+            <button style="width: 20%; height: 50px; background-color: rgba(238, 28, 37, 1); " type="submit"
+                class="btn btn-primary btn-lg btn-block">Update</button>
+        </form>
+
+    </div>
+
+
+</mat-card>

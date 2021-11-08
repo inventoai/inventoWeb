@@ -1,0 +1,61 @@
+<div class="div1">
+    <div class="example-button-row">
+        <button mat-raised-button color="white" [routerLink]="['./scan']" routerLinkActive="active"> Inventory Count
+        </button>
+        <button mat-raised-button color="white" [routerLink]="['./analyze']" routerLinkActive="active"> Analyze
+        </button>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+
+
+<div style="margin:0.5%; position:inherit;">
+    <form class="form-inline">
+        <label for="email">Filter:</label>
+        <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
+            name="email">
+        <label for="pwd">Show:</label>
+        <select name="" id="">
+            <option value="">10</option>
+        </select>
+
+        <div>
+            <button (click)="openPDF()"><b>Download PDF</b></button>
+        </div>
+    </form>
+</div>
+
+<div class="table-responsive" id="htmlData">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Location</th>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Category ID</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">No of Inbound Scan</th>
+                <th scope="col">No of Outbound Scan</th>
+                <th scope="col">No of Internal Scan</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let invento of inventory | async | filter:searchText; let i=index">
+                <td scope="row"> {{i+1}} </td>
+                <td>{{ invento.date }}</td>
+                <td>{{ invento.businessLocation }}</td>
+                <td> {{invento.productId}} </td>
+                <td> {{invento.productName}} </td>
+                <td> {{invento.categoryId}} </td>
+                <td> {{invento.categoryName}} </td>
+                <td>{{ invento.inboundScan }}</td>
+                <td>{{ invento.outboundScan }}</td>
+                <td> {{invento.internalScan}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

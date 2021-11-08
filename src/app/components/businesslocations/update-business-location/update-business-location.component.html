@@ -1,0 +1,27 @@
+<mat-card>
+
+    <h3> Update Location</h3>
+    <hr>
+    <div style="width:100%;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Location Id</mat-label>
+                    <input matInput id="locationId" required [(ngModel)]="businesslocation.locationId" name="locationId">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Location Name</mat-label>
+                    <input matInput id="locationName" required [(ngModel)]="businesslocation.locationName" name="locationName">
+                </mat-form-field>
+
+            </div>
+
+            <button style="width: 20%; height: 50px; background-color: rgba(238, 28, 37, 1); " type="submit"
+                class="btn btn-primary btn-lg btn-block">Update</button>
+        </form>
+
+    </div>
+
+</mat-card>

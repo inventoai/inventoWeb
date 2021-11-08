@@ -1,0 +1,82 @@
+<mat-card>
+    <form action="">
+
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="200px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Select Report Type</mat-label>
+                <select matNativeControl [disabled]="disableSelect.value">
+                    <option value="" selected></option>
+                    <option *ngFor="let rtype of reportType" value="rtype">
+                        {{rtype}}
+                    </option>
+                </select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Select Business Location</mat-label>
+                <select matNativeControl [disabled]="disableSelect.value">
+                    <option value="" selected></option>
+                    <option *ngFor="let btype of businessLocation" value="btype">
+                        {{btype}}
+                    </option>
+                </select>
+            </mat-form-field>
+            <button fxFlex type="submit">Get Report</button>
+        </div>
+    </form>
+</mat-card>
+
+
+
+<div style="margin:0.5%; position:inherit;">
+    <form class="form-inline">
+        <label for="email">Filter:</label>
+        <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
+            name="email">
+        <label for="pwd">Show:</label>
+        <select name="" id="">
+            <option value="">5</option>
+        </select>
+
+        <div>
+            <button class="btn btn-success btn-block" (click)="openPDF()"><b>Download PDF</b></button>
+        </div>
+    </form>
+</div>
+
+<div class="table-responsive" id="htmlData">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Location ID</th>
+                <th scope="col">Location Name</th>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Category ID</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Start Stock</th>
+                <th scope="col">Available Stock</th>
+                <th scope="col">Moved Stock</th>
+                <th scope="col">Product Price</th>
+                <th scope="col">Total Sales(INR)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data | filter:searchText ; let i = index">
+                <td scope="row">{{ item.sn }}</td>
+                <td>{{item.locationid}}</td>
+                <td>{{item.locationname}}</td>
+                <td> {{item.productid}} </td>
+                <td> {{item.productname}} </td>
+                <td> {{item.categoryid}} </td>
+                <td> {{item.categoryname}} </td>
+                <td> {{item.startstock}} </td>
+                <td> {{item.availablestock}} </td>
+                <td> {{item.movedstock}} </td>
+                <td> {{item.productprice}} </td>
+                <td> {{item.totalsales}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

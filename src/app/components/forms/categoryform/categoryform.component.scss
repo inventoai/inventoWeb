@@ -1,0 +1,74 @@
+$background-moredark: #0C2531;
+.active {
+    background: $background-moredark;
+    color: white;
+}
+
+.button{
+  background-color:rgba(238, 28, 37, 1);
+  height: 55px;
+}
+
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  }
+  
+  .form-inline label {
+  margin: 1% 1% 1% 1%;
+  }
+  
+  .form-inline input {
+  vertical-align: middle;
+  margin: 1% 41% 1% 1%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  }
+  .form-inline select {
+  vertical-align: middle;
+  margin: 5px 5% 5px 1%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  }
+  
+  .form-inline button {
+  padding: 10px 20px;
+  margin: 5px 5% 5px 5%;
+  background-color: #0C2531;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+  }
+  
+  .form-inline button:hover {
+  background-color: #D1C4E9;
+  color: #0C2531;
+  }
+  
+  @media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  .form-inline select {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  height: 50px;
+  width: 150px;
+  border-radius: 3px 3px 3px 3px;
+  border: solid rgba(12, 37, 49, 0.6) 2px;
+}

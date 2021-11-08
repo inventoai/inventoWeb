@@ -1,0 +1,17 @@
+form {
+    padding : 30px;
+  }
+
+  p {
+    font-family: Lato;
+  }
+
+
+  .table-responsive {
+    overflow-y: auto;
+    height: 550px;
+    }
+    .table-responsive thead th {
+      position: sticky;
+      top: 0;
+    }

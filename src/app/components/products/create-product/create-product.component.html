@@ -1,0 +1,57 @@
+<div style=" margin: 1%;" >
+
+
+    <h3 > Create New Product</h3>
+    <hr>
+    <div [hidden]="submitted" style="width:100%;">
+        <form (ngSubmit)="onSubmit()"  class="table-responsive">
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Product Id</mat-label>
+                    <input matInput type="text" id="locationId" placeholder="Location Id" required
+                        [(ngModel)]="product.productId" name="productId">
+                </mat-form-field>
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput type="text" id="locationId" placeholder="Location Name" required
+                        [(ngModel)]="product.productName" name="productName">
+                </mat-form-field>
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Category Id</mat-label>
+                    <input matInput type="text" id="categoryId" placeholder="Category Id" required
+                        [(ngModel)]="product.categoryId" name="categoryId">
+                </mat-form-field>
+
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Select Category</mat-label>
+                    <select matNativeControl [disabled]="disableSelect.value" id="categoryName" required
+                        [(ngModel)]="product.categoryName" name="categoryName">
+                        <option value="" selected></option>
+                        <option *ngFor="let ctype of categoryType">
+                            {{ctype}}
+                        </option>
+                    </select>
+                </mat-form-field>
+
+            </div>
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+                <button style="width: 200px; height: 50px; background-color: rgba(238, 28, 37, 1); " type="submit"
+                    class="btn btn-primary btn-lg btn-block">Create</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+    <div [hidden]="!submitted">
+        <h4>Successfully submitted!</h4>
+    </div>
+
+</div>

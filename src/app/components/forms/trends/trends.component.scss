@@ -1,0 +1,20 @@
+.example-button-row button,
+.example-button-row a {
+  height: 50px;
+  width: 150px;
+  border: solid black 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.example-button-row button:hover {
+  background-color: #D1C4E9;
+  color: #0C2531;
+  }
+
+.active {
+    background: white;
+}
+.div1{
+  margin: 1%;
+}

@@ -1,0 +1,77 @@
+<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" style="position: relative;">
+
+    <div class="container jumbotron" fxFlex fxFlex.gt-sm="15%">
+
+        <img src="/assets/images/logo1.png" alt="Logo" style="margin: 10%;" height="95" width="145">
+        <div></div>
+        <p><a mat-button [routerLink]="['./dashboard']" routerLinkActive="active"><span class="fa fa-home fa-lg"></span>
+                <b>Dashboard</b> </a></p>
+        <p><a mat-button [routerLink]="['./barcode']" routerLinkActive="active"><span class="fa fa-list fa-lg"></span>
+                <b>Barcode</b></a></p>
+        <p><a mat-button [routerLink]="['./inventorycount']" routerLinkActive="active"><span
+                    class="fa fa-address-card fa-lg"></span> <b>Inventory Count</b></a></p>
+        <p><a mat-button [routerLink]="['./advanceslotting']" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span>
+                <b>Advance Slotting</b></a></p>
+        <p><a mat-button [routerLink]="['./analyzereport']" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span>
+                <b>Analyze Report</b></a></p>
+        <p><a mat-button [routerLink]="['./forecast']" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span>
+                <b>Forecast</b></a></p>
+
+    </div>
+
+    <!--<div fxFlex fxFlex.gt-sm="100%" class="container jumbotron1">
+        <app-dashboard></app-dashboard>
+    </div> -->
+    <div fxFlex>
+
+        <div class="dynamic">
+
+                <header id="header">
+                    <mat-toolbar class="jumbotron1">
+                        <div fxFlex class="sb-example-1">
+                            <div class="search">
+                               <input type="text" class="searchTerm" placeholder="Search..">
+                               <button type="submit" class="searchButton">
+                                 <mat-icon class="icon1">search</mat-icon>
+                              </button>
+                            </div>
+                         </div>
+                          <div class="vl"></div>
+                          <p id="p">{{todayDate | date:'short':'IST'}}</p> 
+                          <div class="vl"></div>
+                          <p style="margin: 2%;"><mat-icon>email</mat-icon> </p>
+                          <img id="dp" matListAvatar src={{users}} alt={{users}}>
+                          
+                          
+                
+                    </mat-toolbar>
+                </header>
+                
+                
+                
+                <router-outlet></router-outlet>
+                  
+                
+                
+                <footer id="footer">
+                    <mat-toolbar class="footer">
+                        <a mat-button routerLink="/bsuheader/howitworks" routerLinkActive="active"><span class="fa fa-home fa-lg"></span><b> How It Works</b></a>
+                        |
+                        <a mat-button routerLink="/bsuheader/contactus" routerLinkActive="active"><span class="fa fa-info fa-lg"></span> <b>Contact Us</b></a>
+                        |
+                        <a mat-button routerLink="/bsuheader/faqs" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> <b>FAQs</b></a>
+                        |
+                        <a mat-button routerLink="/bsuheader/terms" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> <b>Terms & Conditions</b></a>
+                        |
+                        <a mat-button routerLink="/bsuheader/privacypolicy" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> <b>Privacy Policy</b></a>
+                        |
+                        <a mat-button><span class="/fa fa-address-card fa-lg"></span> <b>All right received © 2021 Izeetek Solutions</b></a>
+                    </mat-toolbar>
+                </footer>
+                
+                </div>
+
+    </div>
+
+</div>

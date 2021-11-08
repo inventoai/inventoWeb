@@ -1,0 +1,62 @@
+<mat-card style="margin-left: 1%; margin-right: 1%;">
+    <form action="">
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="550px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Select Product Type</mat-label>
+                <select matNativeControl [disabled]="disableSelect.value">
+                    <option value="" selected></option>
+                    <option *ngFor="let ptype of productType" value="ptype">
+                        {{ptype}}
+                    </option>
+                </select>
+            </mat-form-field>
+            <button class="button" fxFlex type="submit"><b>Get Report</b></button>
+        </div>
+
+    </form>
+</mat-card>
+
+
+
+
+
+<div style="margin:0.5%; position:inherit;">
+    <form class="form-inline">
+        <label for="email">Filter:</label>
+        <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
+            name="email">
+        <label for="pwd">Show:</label>
+        <select name="" id="">
+            <option value="">5</option>
+        </select>
+
+        <div>
+            <button class="btn btn-success btn-block" (click)="openPDF()"><b>Download PDF</b></button>
+        </div>
+    </form>
+</div>
+
+
+<div class="table-responsive" id="htmlData">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Relation Product Sales Percent(%)</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pr of productRelation | async | filter:searchText; let i=index">
+                <td scope="row">{{ i+1 }}</td>
+                <td> {{pr.productId}} </td>
+                <td> {{pr.productName}} </td>
+                <td> {{pr.rpsPercent}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

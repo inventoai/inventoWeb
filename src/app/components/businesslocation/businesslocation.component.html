@@ -1,0 +1,87 @@
+<div>
+
+    <div fxFlex="80%" class="sb-example-1">
+      <div class="search">
+        <h4>Filter:</h4>
+        <input class="searchTerm" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="Type to filter..">
+        <button type="submit" class="searchButton">
+          <mat-icon style="font-size: 30px; margin-top: 8px;">search</mat-icon>
+        </button>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+    <div fxFlex="32%">
+      <div fxFlex="35%">
+        <form [formGroup]="numberForm" (ngSubmit)="submit()">
+  
+          <p>
+            <label for="number">
+              <h4>Show:</h4>
+            </label>
+            <select class="search1" formControlName="number">
+              <option [ngValue]="null" disabled>10</option>
+              <option *ngFor="let number of numbers" [ngValue]="number">{{number}}</option>
+            </select>
+          </p>
+  
+        </form>
+      </div>
+      <div fxFlex class="search2">
+        <button type="submit" class="searchButton2" routerLink='/header/newlocation' routerLinkActive="active">
+          Create New Location
+        </button>
+      </div>
+    </div>
+  
+  
+  </div>
+  
+  <br> <br>
+  
+  <div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Location ID</th>
+          <th> Location Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data | filter:searchText ; let i = index">
+          <td> {{ item.sn }} </td>
+          <td><div style="width: 150px;">
+            {{ item.locationid }}
+          </div></td>
+          <td> {{item.locationname}} </td>
+  
+          <td>
+            <div style="width: 175px; margin-left: 30px;">
+              <button mat-mini-fab color="primary" style="margin: 2px;">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button mat-mini-fab color="primary" style="margin:2px;">
+                <mat-icon>remove_red_eye</mat-icon>
+              </button>
+              <button mat-mini-fab color="primary" style="margin: 2px;">
+                <mat-icon> border_color</mat-icon>
+              </button>
+              <button mat-mini-fab color="primary">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

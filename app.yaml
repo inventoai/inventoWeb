@@ -1,0 +1,11 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: dist/InventoWebApp/index.html
+  upload: dist/InventoWebApp/index.html
+
+- url: /
+  static_dir: dist/InventoWebApp

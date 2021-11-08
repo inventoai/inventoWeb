@@ -1,0 +1,63 @@
+<mat-card style="margin: 2%;">
+
+
+    <div class="container" fxLayout="column" fxLayoutGap="2px">
+
+        <div fxFlex>
+            <div>
+                <h3>Add Invento App Users </h3>
+                <hr>
+            </div>
+        </div>
+
+        <div fxFlex fxFlexOffset="20px" class="form-size">
+            <h3>Set User Details</h3>
+            <hr>
+       <!--     <p>{{ userAccessForm.value | json }} </p> -->
+
+            <form novalidate [formGroup]="userAccessForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="80px"
+                    fxLayoutGap.lt-md="0px">
+
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput formControlName="username" placeholder="User Name" type="text" required>
+                    </mat-form-field>
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput formControlName="password" placeholder="Password " type="text" required>
+                    </mat-form-field>
+                </div>
+
+                <h3>Select Invento Access Type</h3>
+                <hr>
+
+
+                <div formGroupName="roles">
+                    <p>
+                        <mat-checkbox formControlName="advanceslotting">Advance Slotting</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox formControlName="barcodescanner">Barcode Scanner</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox formControlName="inventorycount">Inventory Count</mat-checkbox>
+                    </p>
+
+                </div>
+
+                <hr>
+
+
+                <div mat-dialog-actions align="end">
+                    <button mat-button class="background-primary text-floral-white" cdkFocusInitial>Cancel</button>
+                    <button type="submit" mat-button class="background-primary text-floral-white"
+                        cdkFocusInitial>Submit</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+</mat-card>

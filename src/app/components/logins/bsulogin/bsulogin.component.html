@@ -1,0 +1,77 @@
+<!-- <div class="container" >
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+            <span class="input-group-addon"><i id="icon" class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" id="email" type="text" name="email" formControlName="username"
+                placeholder="Email">
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+
+
+        <div class="input-group">
+            <span class="input-group-addon"><i id="icon" class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" formControlName="password" placeholder="Password"/>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+
+        <div>
+            <button class="bsubutton" type="submit" [disabled]="loading"> <span *ngIf="loading"
+                    class="spinner-border spinner-border-sm mr-1"></span> <b>Login</b></button>
+        </div>
+    </form>
+
+    <div class="reset">
+        <p><b>Forgot Password?</b>
+            <span class="flex-spacer"></span>
+            <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Reset Password</a>
+        </p>
+    </div>
+
+</div> -->
+
+
+
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label for="userName">Username</mat-label>
+                <input matInput type="text" formControlName="userName" />
+            </mat-form-field>
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                <div *ngIf="f.userName.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="input-group">
+            <mat-form-field class="half-width" appearance="outline">
+                <mat-label for="password">Password</mat-label>
+                <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+
+        <div>
+            <button class="bsubutton" type="submit" [disabled]="loading"> <span *ngIf="loading"
+                    class="spinner-border spinner-border-sm mr-1"></span> Login
+            </button>
+        </div>
+    <!--    <div>
+            <a routerLink="../userregistration">Register</a>
+        </div> -->
+        <div class="reset">
+            <p><b>Forgot Password?</b>
+                <span class="flex-spacer"></span>
+                <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Reset
+                    Password</a>
+            </p>
+        </div>
+    </form>
+</div>

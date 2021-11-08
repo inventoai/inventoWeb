@@ -1,0 +1,53 @@
+<div class="employee">
+    <mat-card>
+
+        <h4> Create New Location</h4>
+        <hr>
+
+
+       
+        <form novalidate [formGroup]="userForm" #fform="ngForm" (ngSubmit)="submit()">
+            <div>
+
+                <div fxFlex>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <mat-icon id="icon">person</mat-icon>
+                        </span>
+                        <input formControlName="username" class="form-control" placeholder="Location ID" type="text" required>
+        
+                        <span class="input-group-addon">
+                            <mat-icon id="icon">phone</mat-icon>
+                        </span>
+                        <input formControlName="mobilenumber" class="form-control" placeholder="Location Name" type="text"
+                            required>
+        
+                    </div>
+                </div>
+
+                <div fxFlex='20%' class="buttondiv">
+                    <button class="form-control" style="background-color: red; border-radius: 4px 4px 4px 4px;">Submit</button>
+                </div>
+
+                
+            </div>
+            <div>
+                <div fxFlex="30%" style="margin-left:12px;">
+                    <mat-error *ngIf="formErrors.username">{{formErrors.username}}</mat-error>
+                </div>
+                <div fxFlex="25%">
+                    <mat-error *ngIf="formErrors.mobilenumber">{{formErrors.mobilenumber}}</mat-error>
+                </div>
+                <div fxFlex="25%">
+                    <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+                </div>
+            </div>
+
+
+
+        </form>
+
+
+
+    </mat-card>
+</div>

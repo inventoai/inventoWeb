@@ -1,0 +1,148 @@
+<!--<input type="text" [(ngModel)]="query_conversation"/>
+
+<p appHighlight
+  [content]="content" 
+  [searchTerm]="query_conversation" 
+  [caseSensitive]="false"> Heello
+</p> 
+
+<div style="text-align: center;">
+    <mat-card>
+        <h1  style="color: #0c2531"> Welcome To Invento AI Solutions</h1>
+    <h4> Thankyou !</h4>
+    </mat-card>
+</div> -->
+
+<div class="input-row" fxLayout="row" fxLayout-lt-md="column" fxLayoutGap="40px" fxLayout-lt-md="0px">
+
+  <div fxFlex>
+    <div class="icon1">
+      <mat-icon>person</mat-icon>
+    </div>
+    <mat-card class="contents">
+      <mat-card-content style="margin-left: 8.1em; margin-top: 1em; font-size: 8px;">
+        Last Update at 5:30 PM
+      </mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <label for="">Total Users</label>
+        500
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+  <div fxFlex>
+    <div class="icon2">
+      <mat-icon> view_headline</mat-icon>
+    </div>
+    <mat-card class="contents">
+      <mat-card-content style="margin-left: 8.1em; margin-top: 1em; font-size: 8px;">
+        Last Update at 5:30 PM
+      </mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <label for="">Today Scan code</label>
+        150
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+  <div fxFlex>
+    <div class="icon3">
+      <mat-icon>settings_overscan</mat-icon>
+    </div>
+    <mat-card class="contents">
+      <mat-card-content style="margin-left: 8.1em; margin-top: 1em; font-size: 8px;">
+        Last Update at 5:30 PM
+      </mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <label for="">Total Products</label>
+        750
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+  <div fxFlex>
+    <div class="icon4">
+      <mat-icon>business</mat-icon>
+    </div>
+    <mat-card class="contents">
+      <mat-card-content style="margin-left: 8.1em; margin-top: 1em; font-size: 8px;">
+        Last Update at 5:30 PM
+      </mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <label for="">Today Inventory </label>
+        750
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex>
+    <div class="icon5">
+      <mat-icon>location_city</mat-icon>
+    </div>
+    <mat-card class="contents">
+      <mat-card-content style="margin-left: 8.1em; margin-top: 1em; font-size: 8px;">
+        Last Update at 5:30 PM
+      </mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <label for="">Business Location</label>
+        750
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<br>
+<div class="input-row" fxLayoutAlign="start start" fxLayout="row" fxLayout-lt-md="column" fxLayoutGap="19px"
+  fxLayoutGap-lt-md="0px">
+  <mat-card fxFlex="30">
+    <h2>Bar Chart</h2>
+    <figure id="bar"></figure>
+  </mat-card>
+  <mat-card fxFlex="50">
+    <h4 style="text-align:center">Pie Chart For Usage of SmartInventoryManagement App
+    </h4>
+
+    <div style="display: block">
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+    <div class="input-row" fxLayout="column" fxLayout-lt-md="row" fxLayoutGap="5px" fxLayoutGap-lt-md="0px">
+      <div fxFlex style="text-align: center; background-color: whitesmoke;">
+        <h4>LIVE BAR CODE SCAN</h4>
+      </div>
+      <div fxFlex style="text-align: center;">
+        <h2>2510</h2>
+        Total Scans
+      </div>
+      <hr>
+      <div fxFlex style="text-align: center;">
+        <p><label for="">Inbound Scan </label>
+          100
+        </p>
+        <p><label for="">Outbound Scan </label>
+          200
+        </p>
+        <p><label for="">Total Scan </label>
+          300
+        </p>
+      </div>
+    </div>
+    <mat-card-header>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-footer>
+    </mat-card-footer>
+
+  </mat-card>
+</div>

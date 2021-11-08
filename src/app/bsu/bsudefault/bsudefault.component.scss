@@ -1,0 +1,102 @@
+$background-light: #0C2531;
+
+.sidenav-container {
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.sidenav {
+  width: 270px;
+  background-color: $background-light;
+  color: white;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  color: white;
+}
+.sidenav button:hover {
+  background-color: #D1C4E9;
+  color: #0C2531;
+  }
+  .sidenav button {
+    background-color: #0C2531;
+    color: white;
+    }
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-master {
+  background-color: $background-light;
+  color: #fff;
+}
+
+.ft-legal {
+  padding: 0.9375rem 1.875rem;
+  background-color: white;
+  color: $background-light;
+}
+.ft-legal-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft-legal-list li {
+  margin-right: 2%;
+  white-space: nowrap;
+  font: 115% sans-serif;
+}
+/* one before the last child */
+.ft-legal-list li:nth-last-child(1) {
+  flex: 1;       /* same as flex-grow: 1; */
+}
+
+
+
+
+.vl {
+  height: 50px;
+  margin-left: 85%;
+  margin-right: 10%;
+  position: relative;
+  }
+  .v2 {
+    border-left: 0.1px solid white;
+    height: 50px;
+    margin: 1%;
+    }
+
+  #search{
+   height: 45px;
+   width: 250px;
+   color: $background-light;
+  }
+
+  #search1{
+    height: 50px;
+    width: 320px;
+    color: $background-light;
+   }
+
+  .fixed-header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+  }
+  .fixed-content{
+    margin-top: 8em;
+    position: relative;
+    z-index: 1; /* put .gold-box above .green-box and .dashed-box */
+  }
+  
+  .fixed-footer{
+    position: fixed;
+    z-index: 2; /* put .green-box above .dashed-box */
+    bottom: 0;
+    width: 100%;
+  }

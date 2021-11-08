@@ -1,0 +1,29 @@
+<div class="container" style="position: relative;">
+
+    <form novalidate [formGroup]="itForm" #fform="ngForm" (ngSubmit)="onSubmit()">   
+        <div class="input-group">
+            <span class="input-group-addon"><i id="icon" class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" formControlName="email" placeholder="Email" type="text" required>
+        </div>
+        
+
+        <div class="input-group">
+            <span class="input-group-addon"><i id="icon" class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" formControlName="password" placeholder="Password" type="text" required>
+
+        </div>
+
+
+        <button class="bsubutton" type="submit" routerLink="/header"><b>Log In</b></button>
+        
+    </form>
+
+
+    <div class="reset">
+        <p><b>Forgot Password?</b>
+            <span class="flex-spacer"></span>
+            <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Reset Password</a>
+        </p>
+    </div>
+
+</div>

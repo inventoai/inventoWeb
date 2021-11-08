@@ -1,0 +1,21 @@
+<div class="table-responsive" id="htmlData">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let frequento2 of frequentLevel2 | async | filter:searchText; let i=index">
+                <td scope="row">{{ i+1 }}</td>
+                <td>{{ frequento2.date }}</td>
+                <td> {{frequento2.productId}} </td>
+                <td> {{frequento2.productName}} </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

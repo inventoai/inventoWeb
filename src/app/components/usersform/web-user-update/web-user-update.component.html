@@ -1,0 +1,128 @@
+<mat-card style="margin-top: 2%; margin-bottom: 4%; margin-left: 2%; margin-right: 2%;">
+
+    <div class="container" fxLayout="column" fxLayoutGap="2px">
+
+        <div fxFlex>
+            <div>
+                <h3>Add Invento Web Users </h3>
+                <hr>
+            </div>
+        </div>
+
+
+        <div fxFlex fxFlexOffset="20px" class="form-size">
+            <h3>Set Web User Details</h3>
+            <hr>
+            <!--    <p>{{ userWebAccessForm.value | json }} </p> -->
+
+            <!--<form [formGroup]="userWebAccessForm" (ngSubmit)="onSubmit()">
+
+                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px"
+                    fxLayoutGap.lt-md="0px">
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput id="userName" placeholder="User Name" type="text" required [(ngModel)]="userWebAccess.userName">
+                    </mat-form-field>
+                    
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput id="mobile" placeholder="Mobile" type="number" required [(ngModel)]="userWebAccess.mobile">
+                    </mat-form-field>
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput id="emailId" placeholder="Email " type="email" required [(ngModel)]="userWebAccess.emailId">
+                    </mat-form-field>
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput id="employeeId" placeholder="Employee Id " type="text" required [(ngModel)]="userWebAccess.userName">
+                    </mat-form-field>
+                </div>
+                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px"
+                    fxLayoutGap.lt-md="0px">
+                    <mat-form-field fxFlex appearance="outline">
+                        <mat-label>Department Type</mat-label>
+                        <select matNativeControl [disabled]="disableSelect.value" id="city" required
+                            id="departmentType" [(ngModel)]="userWebAccess.departmentType" name="departmentType">
+                            <option value="" selected></option>
+                            <option *ngFor="let dtype of departmentType">
+                                {{dtype}}
+                            </option>
+                        </select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex appearance="outline">
+                        <mat-label>Select Location</mat-label>
+                        <select matNativeControl [disabled]="disableSelect.value" id="location" required
+                            id="location" [(ngModel)]="userWebAccess.location" name="location">
+                            <option value="" selected></option>
+                            <option *ngFor="let btype of businessLocation">
+                                {{btype}}
+                            </option>
+                        </select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex appearance="outline">
+                        <mat-label>Select State</mat-label>
+                        <select matNativeControl [disabled]="disableSelect.value" id="state" required
+                            id="state" [(ngModel)]="userWebAccess.state" name="city">
+                            <option value="" selected></option>
+                            <option *ngFor="let state of states">
+                                {{state}}
+                            </option>
+                        </select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex appearance="outline">
+                        <mat-label>Select City</mat-label>
+                        <select matNativeControl [disabled]="disableSelect.value" id="city" required
+                            id="city" [(ngModel)]="userWebAccess.city" name="city">
+                            <option value="" selected></option>
+                            <option *ngFor="let ctype of districts">
+                                {{ctype}}
+                            </option>
+                        </select>
+                    </mat-form-field>
+
+                    <mat-form-field class="half-width" appearance="outline">
+                        <input matInput id="address" placeholder="Address" type="text" required [(ngModel)]="userWebAccess.address">
+                    </mat-form-field>
+                </div>
+
+                <h3>Select Web Access Type</h3>
+                <hr>
+
+                <div formGroupName="roles" class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px"
+                    fxLayoutGap.lt-md="0px">
+                    <p>
+                        <mat-checkbox id="advanceslotting" [(ngModel)]="userWebAccess.roles.advanceslotting">Advance Slotting</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox id="analyzereport" [(ngModel)]="userWebAccess.roles.analyzereport">Analyze Report </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox id="barcodescanner" [(ngModel)]="userWebAccess.roles.barcodescanner">Barcode Scanner</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox id="location" [(ngModel)]="userWebAccess.roles.location">Business Location</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox id="category" [(ngModel)]="userWebAccess.roles.category">Category </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox id="forecast" [(ngModel)]="userWebAccess.roles.forecast">Forecast </mat-checkbox>
+                    </p>
+
+                    <p>
+                        <mat-checkbox id="inventorycount" [(ngModel)]="userWebAccess.roles.inventorycount">Inventory Count</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox id="product" [(ngModel)]="userWebAccess.product">Product </mat-checkbox>
+                    </p>
+
+                </div>
+
+                <div mat-dialog-actions align="end">
+                    <button mat-button class="background-primary text-floral-white" cdkFocusInitial>Cancel</button>
+                    <button type="submit" mat-button class="background-primary text-floral-white"
+                        cdkFocusInitial>Submit</button>
+                </div>
+            </form>-->
+        </div>
+    </div>
+</mat-card>

@@ -1,0 +1,60 @@
+<mat-card>
+
+    <h2>User Details</h2>
+
+    <hr />
+    <div *ngIf="webUser">
+        <div>
+            <label><b> User Name: </b></label> {{webUser.userName}}
+        </div>
+        <div>
+            <label><b>Mobile Number: </b></label> {{webUser.mobileNumber}}
+        </div>
+        <div>
+            <label><b>Email Id: </b></label> {{webUser.emailId}}
+        </div>
+    </div>
+
+    <div>
+        <label><b> Department: </b></label> {{webUser.departmentType}}
+    </div>
+    <div>
+        <label><b>Business Location: </b></label> {{webUser.location}}
+    </div>
+    <div>
+        <label><b>Employee Id: </b></label> {{webUser.employeeId}}
+    </div>
+
+    <div>
+        <label><b> State: </b></label> {{webUser.state}}
+    </div>
+    <div>
+        <label><b> City: </b></label> {{webUser.city}}
+    </div>
+    <div>
+        <label><b>Address : </b></label> {{webUser.address}}
+    </div>
+    <div *ngIf="webUser.roles">
+        <label><b>Roles : </b></label> 
+        <ul>
+            <li> Advance Slotting : {{webUser.roles.advanceslotting}} </li>
+            <li> Analyze Report : {{webUser.roles.analyzereport}} </li>
+            <li> Barcode Scanner : {{webUser.roles.barcodescanner}} </li>
+            <li> Location : {{webUser.roles.location}} </li>
+            <li> Category : {{webUser.roles.category}} </li>
+            <li> Forecast : {{webUser.roles.forecast}} </li>
+            <li> Inventory Count : {{webUser.roles.inventorycount}} </li>
+            <li> Product : {{webUser.roles.product}} </li>
+        </ul>
+    </div>
+  <!--  <div>
+        <label> <b>Photo:</b> </label> 
+        <img src = "data:image/png;base64, {{webUser.photo}}" alt= "photo"/>
+    </div> -->
+
+
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Back</button><br>
+
+</mat-card>

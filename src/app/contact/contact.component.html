@@ -1,0 +1,56 @@
+<div class="container" fxFlex>
+    <mat-card>
+        <div fxFlex="50">
+            <h3><b>Farm Contact Detail</b></h3>
+            <p>
+                Mauris eu porttitor est, sed laoreet mi. Sed mauris lorem, <br>
+
+                porta non tempor imperdiet.</p> <br>
+            <p>
+                <mat-icon> location_on</mat-icon> &nbsp; #235/2, Marathahalli, Old airport road, Bangalore 560037
+            </p>
+            <p>
+                <mat-icon>phone</mat-icon> &nbsp; 080 6593 2658 00 | +91 9685 6985 56
+            </p>
+            <p>
+                <mat-icon>email</mat-icon> &nbsp; support@izeetek.com <br>
+
+                &nbsp; &nbsp; &nbsp; &nbsp; sales@izeetek.com
+            </p>
+        </div>
+
+        <div fxFlex fxFlexOffset="20px" class="form-size">
+
+            <h3><b>Get In Touch</b></h3>
+            <p>Your email address will not be published. Required fields are marked (*)</p>
+
+            <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+                <p>
+                    <mat-form-field class="half-width">
+                        <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
+                        <mat-error *ngIf="formErrors.firstname">{{formErrors.firstname}}</mat-error>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field class="half-width">
+                        <input matInput formControlName="email" placeholder="Email" type="email" email required>
+                        <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field class="full-width">
+                        <textarea matInput formControlName="message" placeholder="Message...." rows=2 cols=50></textarea>
+                    </mat-form-field>
+                </p>
+                <button type="submit" mat-button class="background-primary text-floral-white">Send Message</button>
+            </form>
+
+
+
+        </div>
+
+        
+
+    </mat-card>
+
+</div>

@@ -1,0 +1,50 @@
+<mat-card style="margin:0.5%; position:inherit;">
+  <form class="form-inline">
+    <label for="email">Filter:</label>
+    <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
+      name="email">
+    <label for="pwd">Show:</label>
+    <select name="" id="">
+      <option value="">10</option>
+    </select>
+    <button style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
+      routerLink='/default/createcategory' routerLinkActive="active">Create New Category</button>
+  </form>
+</mat-card>
+
+<br> <br>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Category Id</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories | async | filter:searchText; let i=index">
+        <td scope="row"> {{i+1}} </td>
+        <td>{{category.categoryId}}</td>
+        <td> {{category.categoryName}} </td>
+        <td>
+          <div style="width: 100%;">
+            <button mat-mini-fab color="check">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-mini-fab color="update" (click)="updateCategory(category.id)"
+              style="margin-left: 2%;margin-right: 2%;">
+              <mat-icon> border_color</mat-icon>
+            </button>
+            <button mat-mini-fab color="delete" (click)="deleteCategory(category.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

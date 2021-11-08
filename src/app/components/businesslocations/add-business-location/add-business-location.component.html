@@ -1,0 +1,34 @@
+<mat-card>
+
+    <h3> Create New Location</h3>
+    <hr>
+    <div [hidden]="submitted" style="width:100%;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Location Id</mat-label>
+                    <input matInput type="text" id="locationId" placeholder="Location Id" required
+                        [(ngModel)]="businesslocation.locationId" name="locationId">
+                </mat-form-field>
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Location Name</mat-label>
+                    <input matInput type="text" id="locationName" placeholder="Location Name" required
+                        [(ngModel)]="businesslocation.locationName" name="locationName">
+                </mat-form-field>
+
+            </div>
+
+            <button style="width: 200px; height: 50px; background-color: rgba(238, 28, 37, 1); " type="submit"
+                class="btn btn-primary btn-lg btn-block">Create</button>
+        </form>
+
+    </div>
+
+
+
+    <div [hidden]="!submitted">
+        <h4>Successfully submitted!</h4>
+    </div>
+</mat-card>

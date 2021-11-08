@@ -1,0 +1,29 @@
+<mat-card>
+
+    <h3> Create New Category</h3>
+    <hr>
+    <div style="width:100%;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Category Id</mat-label>
+                    <input matInput type="text" id="categoryId" placeholder="Category Id" required
+                        [(ngModel)]="category.categoryId" name="categoryId">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Category Name</mat-label>
+                    <input matInput type="text" id="categoryName" placeholder="Category Name" required
+                        [(ngModel)]="category.categoryName" name="categoryName">
+                </mat-form-field>
+
+            </div>
+
+            <button style="width: 20%; height: 50px; background-color: rgba(238, 28, 37, 1); " type="submit"
+                class="btn btn-primary btn-lg btn-block">Update</button>
+        </form>
+
+    </div>
+
+</mat-card>

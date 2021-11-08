@@ -1,0 +1,226 @@
+
+
+.sb-example-1 .search {
+    width: 33%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    margin: 1%;
+    
+    
+  }
+  .sb-example-1 .searchTerm {
+    width: 100%;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    border-right: solid blue 0px;
+    outline: none;
+    color: #a29dbf;
+    margin-left: 5%;
+    border: 1px;
+    background-color: white;
+    border-left:  solid wheat 1px;
+    border-top: solid wheat 1px;
+    border-bottom: solid wheat 1px;
+    font-size: 22px;
+    
+  }
+  .sb-example-1 .searchTerm:focus{
+    color: #00B4CC;
+  }
+  .sb-example-1 .searchButton {
+    width: 80px;
+    height: 50px;
+    background: white;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    border-left:  solid wheat 0px;
+    border-right: solid wheat 1px;
+    border-top:  solid wheat 1px;
+    border-bottom: solid wheat 1px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .sb-example-2 .searchButton1 {
+    width: 100px;
+    height: 50px;
+    background: white;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: rgba(238, 28, 37, 1);
+    margin: 1%;
+  }
+  
+  .searchButton2 {
+    width: 200px;
+    height: 50px;
+    background: white;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: rgba(238, 28, 37, 1);
+    margin-top: 4%;
+    text-align: center;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .search1{
+  
+   
+    width: 80px;
+    height: 50px;
+    background: white;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    font-size: 20px;
+    border-left:  solid wheat 1px;
+    border-right: solid wheat 1px;
+    border-top:  solid wheat 1px;
+    border-bottom: solid wheat 1px;
+    margin-top: 9%;
+    margin-left: 3%;
+  }
+  
+  th{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+    color: white;
+    background-color:#0C2531 ;
+    height: 50px;
+    width: 1400px;
+    font-size: 17px;
+    border-radius: 0px 0px 0px 0px;
+    text-align: center;
+  }
+  
+  td{
+    border-collapse: collapse;
+    padding: 5px;
+    height: 50px;
+    width: 1370px;
+    font-size: 15px;
+    border-radius: 0px 0px 0px 0px;
+    text-align: center;
+  }
+  table{
+    border-radius: 5px 5px 5px 5px;
+    border-collapse: collapse;
+    padding: 5px;
+    margin-left: 20px;
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: white;
+  }
+  table tr:nth-child(even) {
+    background-color: rgba(238, 28, 37, 0.0470588235294118);
+  }
+  
+  .mat-check {
+    background-color: green;
+    color: #fff;
+}
+.mat-detail {
+    background-color: lightblue;
+    color: #fff;
+}
+.mat-update {
+    background-color: aqua;
+    color: #fff;
+}
+.mat-delete {
+    background-color: rgba(238, 28, 37, 1);
+    color: #fff;
+}
+
+.table-responsive {
+  overflow-y: auto;
+  height: 450px;
+  }
+  .table-responsive thead th {
+    position: sticky;
+    top: 0;
+  }
+ 
+
+
+
+  body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 1% 1% 1% 1%;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 1% 28% 1% 1%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.form-inline select {
+  vertical-align: middle;
+  margin: 5px 5% 5px 1%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  margin: 5px 5% 5px 5%;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  .form-inline select {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+

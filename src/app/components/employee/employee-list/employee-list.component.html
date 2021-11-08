@@ -1,0 +1,62 @@
+<mat-card style="margin:0.5%; position:inherit;">
+  <form class="form-inline">
+    <label for="email">Filter:</label>
+    <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
+      name="email">
+    <label for="pwd">Show:</label>
+    <select name="" id="">
+      <option value="">10</option>
+    </select>
+    <button style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
+      routerLink='/default/addemployee' routerLinkActive="active">Create New Employee</button>
+  </form>
+</mat-card>
+
+<br> <br>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Department</th>
+        <th scope="col">Business Location</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees | async | filter:searchText;let i=index">
+        <td scope="row"> {{i+1}} </td>
+        <td>{{employee.userName}}</td>
+        <td>{{employee.mobileNumber}}</td>
+        <td> {{employee.emailId}} </td>
+        <td> {{employee.department}} </td>
+        <td> {{employee.businessLocation}} </td>
+        <td> {{employee.employeeId}} </td>
+        <td>
+          <div style="width: 175px; text-align: center;">
+            <button mat-mini-fab color="check" style="position: inherit;">
+              <mat-icon>check</mat-icon>
+            </button>
+            <button mat-mini-fab color="detail" (click)="userDetails(employee.id)"
+              style="margin:3px; position: inherit;">
+              <mat-icon>remove_red_eye</mat-icon>
+            </button>
+            <button mat-mini-fab color="update" (click)="updateUser(employee.id)"
+              style="margin: 3px; position: inherit;">
+              <mat-icon> border_color</mat-icon>
+            </button>
+            <button mat-mini-fab color="delete" (click)="deleteUser(employee.id)" style="position: inherit;">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

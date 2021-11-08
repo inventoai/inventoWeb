@@ -1,0 +1,80 @@
+p {
+    font-family: Lato;
+  }
+  ::ng-deep .text-highlight {
+    background: yellow;
+  }
+
+  .input-row{
+    margin-left: 1%;
+    margin-right: 1%;
+   // margin-top: 5%;
+  }
+
+
+  .icon1{
+    position: absolute;
+    border-radius: 5px 5px 5px 5px;
+    background: rgba(251, 148, 11, 1);
+    color: white;
+    height: 75px;
+    width: 70px;
+    text-align: center;
+    z-index: 2;
+    margin-left: 1%;
+  }
+  .icon2{
+    position: absolute;
+    border-radius: 5px 5px 5px 5px;
+    background: rgba(77, 168, 81, 1);
+    color: white;
+    height: 75px;
+    width: 70px;
+    text-align: center;
+    z-index: 2;
+    margin-left: 1%;
+  }
+  .icon3{
+    position: absolute;
+    border-radius: 5px 5px 5px 5px;
+    background: rgba(231, 63, 59, 1);
+    color: white;
+    height: 75px;
+    width: 70px;
+    text-align: center;
+    z-index: 2;
+    margin-left: 1%;
+  }
+  .icon4{
+    position: absolute;
+    border-radius: 5px 5px 5px 5px;
+    background: rgba(16, 183, 203, 1);
+    color: white;
+    height: 75px;
+    width: 70px;
+    text-align: center;
+    z-index: 2;
+    margin-left: 1%;
+  }
+  .icon5{
+    position: absolute;
+    border-radius: 5px 5px 5px 5px;
+    background: rgba(160, 102, 205, 1);
+    color: white;
+    height: 75px;
+    width: 70px;
+    text-align: center;
+    z-index: 2;
+    margin-left: 1%;
+  }
+
+  .contents{
+    margin-top: 13%;
+    z-index: 1;
+   
+  }
+
+  .mat-icon {
+    font-size: 50px;
+    width: 55px;
+  }

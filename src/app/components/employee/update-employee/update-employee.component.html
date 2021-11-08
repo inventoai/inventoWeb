@@ -1,0 +1,114 @@
+<mat-card>
+
+  <h3> Update Employee</h3>
+  <hr>
+  <div [hidden]="submitted" style="width:100%;" class="table-responsive">
+
+
+    <form fxLayout="column" (ngSubmit)="onSubmit()">
+      <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" id="userName" placeholder="Name" required [(ngModel)]="employee.userName"
+            name="userName">
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input matInput type="text" id="mobileNumber" placeholder="Mobile" required
+            [(ngModel)]="employee.mobileNumber" name="mobileNumber">
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Email Id</mat-label>
+          <input matInput type="text" id="emailId" placeholder="Email Id" required [(ngModel)]="employee.emailId"
+            name="emailId">
+        </mat-form-field>
+
+      </div>
+
+      <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Select Department</mat-label>
+          <select matNativeControl [disabled]="disableSelect.value" id="department" required
+            [(ngModel)]="employee.department" name="department">
+            <option value="" selected></option>
+            <option *ngFor="let dtype of departmentType">
+              {{dtype}}
+            </option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Business Location</mat-label>
+          <select matNativeControl [disabled]="disableSelect.value" id="businessLocation" required
+            [(ngModel)]="employee.businessLocation" name="businessLocation">
+            <option value="" selected></option>
+            <option *ngFor="let btype of businessLocation">
+              {{btype}}
+            </option>
+          </select>
+        </mat-form-field>
+
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Employee Id</mat-label>
+          <input matInput type="text" id="employeeId" placeholder="Employee Id" required
+            [(ngModel)]="employee.employeeId" name="employeeId">
+        </mat-form-field>
+
+      </div>
+
+      <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Select State</mat-label>
+          <select matNativeControl [disabled]="disableSelect.value" id="state" required [(ngModel)]="employee.state"
+            name="state">
+            <option value="" selected></option>
+            <option *ngFor="let state of states">
+              {{state}}
+            </option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label>Select City</mat-label>
+          <select matNativeControl [disabled]="disableSelect.value" id="city" required [(ngModel)]="employee.city"
+            name="city">
+            <option value="" selected></option>
+            <option *ngFor="let ctype of districts">
+              {{ctype}}
+            </option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="outline">
+          <mat-label> Address</mat-label>
+
+          <input matInput name="address" id="address" placeholder="Address" required [(ngModel)]="employee.address" />
+        </mat-form-field>
+
+      </div>
+
+      <div style="height: 150px; width: 200px; border: solid black 1px;">
+        <div style="height: 150; width: 150px;">
+          <img [src]="imgURL" height="208" *ngIf="imgURL" style="height: 145px; width: 200px; ">
+        </div>
+      </div>
+      <input formControlName="img" [(ngModel)]="employee.avtar" style="margin-left: 10px;" #file type="file" accept='image/*'
+        (change)="preview(file.files)" />
+      <br>
+      <button style="width: 200px; height: 50px; background-color: rgba(238, 28, 37, 1); " type="submit"
+        class="btn btn-primary btn-lg btn-block">Create</button>
+
+    </form>
+
+  </div>
+
+  <div [hidden]="!submitted">
+    <h4>Successfully submitted!</h4>
+  </div>
+</mat-card>

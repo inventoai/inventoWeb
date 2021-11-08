@@ -1,0 +1,42 @@
+<mat-card>
+    <form action="">
+
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="150px" fxLayoutGap.lt-md="0px">
+
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Select Date Range</mat-label>
+                <mat-date-range-input [rangePicker]="picker" [formGroup]="range">
+                    <input matStartDate placeholder="Start Date" formControlName="start">
+                    <input matEndDate placeholder="End Date" formControlName="end">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Select Business Location</mat-label>
+                <select matNativeControl [disabled]="disableSelect.value">
+                    <option value="" selected></option>
+                    <option *ngFor="let ltype of businessLocation" value="ltype">
+                        {{ltype}}
+                    </option>
+                </select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Select Analyze Type</mat-label>
+                <select matNativeControl [disabled]="disableSelect.value">
+                    <option value="" selected></option>
+                    <option *ngFor="let atype of analyzeType" value="atype">
+                        {{atype}}
+                    </option>
+                </select>
+            </mat-form-field>
+
+            <button fxFlex type="submit"><b>Get Report</b></button>
+
+        </div>
+
+    </form>
+
+</mat-card>

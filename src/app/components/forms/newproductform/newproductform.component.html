@@ -1,0 +1,56 @@
+<div class="employee">
+    <mat-card>
+
+        <h4> Create New Employee</h4>
+        <hr>
+
+
+        {{ userForm.value | json }}
+        <form novalidate [formGroup]="userForm" #fform="ngForm" (ngSubmit)="submit()">
+            <div class="input-group">
+                <div fxFlex="25%" class="input-group">
+                    <span class="input-group-addon">
+                        <mat-icon class="icon1">location_city</mat-icon>
+                    </span>
+                    <input formControlName="mobilenumber" class="form-control" placeholder="Product ID" type="text"
+                        required>
+                </div>
+                <div fxFlex="25%" class="input-group">
+                    <span class="input-group-addon">
+                        <mat-icon class="icon1">location_city</mat-icon>
+                    </span>
+                    <input formControlName="mobilenumber" class="form-control" placeholder="Product Name" type="text"
+                        required>
+                </div>
+                <div fxFlex="25%" class="input-group">
+                    <span class="input-group-addon">
+                        <mat-icon class="icon1">location_city</mat-icon>
+                    </span>
+                    <select class="form-control1" formControlName="number">
+                        <option [ngValue]="null" disabled>Select Category</option>
+                        <option *ngFor="let number of numbers" [ngValue]="number.id">{{number.name}}</option>
+                    </select>
+                </div>
+                <div fxFlex='20%' class="buttondiv">
+                    <button class="form-control" style="background-color: red; border-radius: 4px 4px 4px 4px; margin-top: 8px;">Submit</button>
+                </div>
+                
+            </div>
+
+            <div>
+                <div fxFlex="30%" style="margin-left:12px;">
+                    <mat-error *ngIf="formErrors.username">{{formErrors.username}}</mat-error>
+                </div>
+                <div fxFlex="25%">
+                    <mat-error *ngIf="formErrors.mobilenumber">{{formErrors.mobilenumber}}</mat-error>
+                </div>
+                <div fxFlex="25%">
+                    <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+                </div>
+            </div>
+        </form>
+
+
+
+    </mat-card>
+</div>

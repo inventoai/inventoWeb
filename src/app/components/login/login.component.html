@@ -1,0 +1,40 @@
+<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+
+    <mat-card fxFlex fxLayout="column" class="form">
+        <div fxFlex>
+            <button mat-raised-button color="primary" id="button1" [routerLink]="['./userlogin']"
+                routerLinkActive="active">
+                <b>IT</b></button>
+            <button mat-raised-button color="primary" id="button2" [routerLink]="['./bsulogin']" routerLinkActive="active">
+                <b>BSU </b>
+            </button>
+        </div>
+        <div fxFlex="100">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-card>
+
+    <mat-card fxFlex class="logo">
+        <div style="text-align: center;">
+            <img src={{logo}} alt="Logo" style="margin-top: 10%;" height="50%" width="30%">
+           <br> <br>
+            <h1>Welcome Back!</h1>
+            <p style="font-size: 1.5em;"> 
+                <b>To keep connceted with us please login with <br>
+                    your personal info.</b>
+            </p>
+        </div> <br> <br>
+
+    <!--    <footer id="footer">
+
+            <div style="font-size: 1em; margin-bottom: 4%;">
+                <a routerLink="/privacy" routerLinkActive="active"><b> How It Works</b></a> &nbsp;
+                <a routerLink="/contactus" routerLinkActive="active">
+                    <b>Contact Us</b></a> &nbsp;
+                <a routerLink="/privacy" routerLinkActive="active"><b>FAQs</b></a> &nbsp;
+                <a routerLink="/privacy" routerLinkActive="active"><b>Terms & Conditions</b></a> &nbsp;
+                <a routerLink="/privacy" routerLinkActive="active"><b>Privacy Policy</b></a>
+            </div>
+        </footer> -->
+    </mat-card>
+</div>
