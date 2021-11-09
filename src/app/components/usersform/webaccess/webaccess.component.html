@@ -1,143 +1,133 @@
-<mat-card style="margin-top: 2%; margin-bottom: 4%; margin-left: 2%; margin-right: 2%;">
+<mat-card style="margin:2%; margin-bottom: 5%; ">
 
-    <div class="container" fxLayout="column" fxLayoutGap="2px">
+    <h3>Add Invento Web Users </h3>
+    <hr>
 
-        <div fxFlex>
-            <div>
-                <h3>Add Invento Web Users </h3>
-                <hr>
+    <div [hidden]="submitted" style="width: 100%;" class="table-responsive">
+        <h3>Set Web User Details</h3>
+        <hr>
+        <!--    <p>{{ userWebAccessForm.value | json }} </p> -->
+
+        <form [formGroup]="userWebAccessForm" (ngSubmit)="onSubmit()">
+
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px" fxLayoutGap.lt-md="2px">
+                <mat-form-field fxFlex appearance="outline">
+                    <input matInput formControlName="userName" placeholder="User Name" type="text" required>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <input matInput formControlName="password" placeholder="Password " type="password" required>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <input matInput formControlName="mobile" placeholder="Mobile" type="number" required>
+                </mat-form-field>
             </div>
-        </div>
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="2px">
+                <mat-form-field fxFlex appearance="outline">
+                    <input matInput formControlName="emailId" placeholder="Email " type="email" required>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <input matInput formControlName="employeeId" placeholder="Employee Id " type="text" required>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Department Type</mat-label>
+                    <select matNativeControl [disabled]="disableSelect.value" id="city" required
+                        formControlName="departmentType" name="departmentType">
+                        <option value="" selected></option>
+                        <option *ngFor="let dtype of departmentType">
+                            {{dtype}}
+                        </option>
+                    </select>
+                </mat-form-field>
 
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Select Location</mat-label>
+                    <select matNativeControl [disabled]="disableSelect.value" id="location" required
+                        formControlName="location" name="location">
+                        <option value="" selected></option>
+                        <option *ngFor="let btype of businessLocation">
+                            {{btype}}
+                        </option>
+                    </select>
+                </mat-form-field>
+            </div>
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px" fxLayoutGap.lt-md="0px">
 
-        <div fxFlex fxFlexOffset="20px" class="form-size">
-            <h3>Set Web User Details</h3>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Select State</mat-label>
+                    <select matNativeControl [disabled]="disableSelect.value" id="state" required
+                        formControlName="state" name="city">
+                        <option value="" selected></option>
+                        <option *ngFor="let state of states">
+                            {{state}}
+                        </option>
+                    </select>
+                </mat-form-field>
+
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Select City</mat-label>
+                    <select matNativeControl [disabled]="disableSelect.value" id="city" required formControlName="city"
+                        name="city">
+                        <option value="" selected></option>
+                        <option *ngFor="let ctype of districts">
+                            {{ctype}}
+                        </option>
+                    </select>
+                </mat-form-field>
+
+                <mat-form-field class="half-width" appearance="outline">
+                    <input matInput formControlName="address" placeholder="Address" type="text" required>
+                </mat-form-field>
+            </div>
+
+            <h3>Select Web Access Type</h3>
             <hr>
-            <!--    <p>{{ userWebAccessForm.value | json }} </p> -->
 
-            <form [formGroup]="userWebAccessForm" (ngSubmit)="onSubmit()">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px" fxLayoutGap.lt-md="0px"
+                formGroupName="roles">
+                <p>
+                    <mat-checkbox formControlName="advanceslotting">Advance Slotting</mat-checkbox>
+                    <mat-checkbox formControlName="analyzereport">Analyze Report </mat-checkbox>
+                </p>
+                <p>
+                    <mat-checkbox formControlName="barcodescanner">Barcode Scanner</mat-checkbox>
+                </p>
+                <p>
+                    <mat-checkbox formControlName="location">Business Location</mat-checkbox>
+                </p>
+                <p>
+                    <mat-checkbox formControlName="category">Category </mat-checkbox>
+                </p>
+                <p>
+                    <mat-checkbox formControlName="forecast">Forecast </mat-checkbox>
+                </p>
 
-                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px"
-                    fxLayoutGap.lt-md="0px">
-                    <mat-form-field class="half-width" appearance="outline">
-                        <input matInput formControlName="userName" placeholder="User Name" type="text" required>
-                    </mat-form-field>
-                    <mat-form-field class="half-width" appearance="outline">
-                        <input matInput formControlName="password" placeholder="Password " type="password" required>
-                    </mat-form-field>
-                    <mat-form-field class="half-width" appearance="outline">
-                        <input matInput formControlName="mobile" placeholder="Mobile" type="number" required>
-                    </mat-form-field>
-                    <mat-form-field class="half-width" appearance="outline">
-                        <input matInput formControlName="emailId" placeholder="Email " type="email" required>
-                    </mat-form-field>
-                    <mat-form-field class="half-width" appearance="outline">
-                        <input matInput formControlName="employeeId" placeholder="Employee Id " type="text" required>
-                    </mat-form-field>
+                <p>
+                    <mat-checkbox formControlName="inventorycount">Inventory Count</mat-checkbox>
+                </p>
+                <p>
+                    <mat-checkbox formControlName="product">Product </mat-checkbox>
+                </p>
+
+            </div>
+
+            <hr>
+
+            <img [src]="imageSrc" *ngIf="imageSrc" style="height: 80px; width:100px">
+
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input formControlName="photo" id="photo" type="file" class="form-control"
+                    (change)="onFileChange($event)">
+                <div *ngIf="f.photo.touched && f.photo.invalid" class="alert alert-danger">
+                    <div *ngIf="f.photo.errors.required">Photo is required.</div>
                 </div>
-                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px"
-                    fxLayoutGap.lt-md="0px">
-                    <mat-form-field fxFlex appearance="outline">
-                        <mat-label>Department Type</mat-label>
-                        <select matNativeControl [disabled]="disableSelect.value" id="city" required
-                            formControlName="departmentType" name="departmentType">
-                            <option value="" selected></option>
-                            <option *ngFor="let dtype of departmentType">
-                                {{dtype}}
-                            </option>
-                        </select>
-                    </mat-form-field>
+            </div>
 
-                    <mat-form-field fxFlex appearance="outline">
-                        <mat-label>Select Location</mat-label>
-                        <select matNativeControl [disabled]="disableSelect.value" id="location" required
-                            formControlName="location" name="location">
-                            <option value="" selected></option>
-                            <option *ngFor="let btype of businessLocation">
-                                {{btype}}
-                            </option>
-                        </select>
-                    </mat-form-field>
-
-                    <mat-form-field fxFlex appearance="outline">
-                        <mat-label>Select State</mat-label>
-                        <select matNativeControl [disabled]="disableSelect.value" id="state" required
-                            formControlName="state" name="city">
-                            <option value="" selected></option>
-                            <option *ngFor="let state of states">
-                                {{state}}
-                            </option>
-                        </select>
-                    </mat-form-field>
-
-                    <mat-form-field fxFlex appearance="outline">
-                        <mat-label>Select City</mat-label>
-                        <select matNativeControl [disabled]="disableSelect.value" id="city" required
-                            formControlName="city" name="city">
-                            <option value="" selected></option>
-                            <option *ngFor="let ctype of districts">
-                                {{ctype}}
-                            </option>
-                        </select>
-                    </mat-form-field>
-
-                    <mat-form-field class="half-width" appearance="outline">
-                        <input matInput formControlName="address" placeholder="Address" type="text" required>
-                    </mat-form-field>
-                </div>
-
-                <h3>Select Web Access Type</h3>
-                <hr>
-
-                <div formGroupName="roles" class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="40px"
-                    fxLayoutGap.lt-md="0px">
-                    <p>
-                        <mat-checkbox formControlName="advanceslotting">Advance Slotting</mat-checkbox>
-                    </p>
-                    <p>
-                        <mat-checkbox formControlName="analyzereport">Analyze Report </mat-checkbox>
-                    </p>
-                    <p>
-                        <mat-checkbox formControlName="barcodescanner">Barcode Scanner</mat-checkbox>
-                    </p>
-                    <p>
-                        <mat-checkbox formControlName="location">Business Location</mat-checkbox>
-                    </p>
-                    <p>
-                        <mat-checkbox formControlName="category">Category </mat-checkbox>
-                    </p>
-                    <p>
-                        <mat-checkbox formControlName="forecast">Forecast </mat-checkbox>
-                    </p>
-
-                    <p>
-                        <mat-checkbox formControlName="inventorycount">Inventory Count</mat-checkbox>
-                    </p>
-                    <p>
-                        <mat-checkbox formControlName="product">Product </mat-checkbox>
-                    </p>
-
-                </div>
-
-                <hr>
-
-                <img [src]="imageSrc" *ngIf="imageSrc" style="height: 80px; width:100px">
-
-                <div class="form-group">
-                    <label for="photo">Photo</label>
-                    <input formControlName="photo" id="photo" type="file" class="form-control"
-                        (change)="onFileChange($event)">
-                    <div *ngIf="f.photo.touched && f.photo.invalid" class="alert alert-danger">
-                        <div *ngIf="f.photo.errors.required">Photo is required.</div>
-                    </div>
-                </div>
-
-                <div mat-dialog-actions align="end">
-                    <button mat-button class="background-primary text-floral-white" cdkFocusInitial>Cancel</button>
-                    <button type="submit" mat-button class="background-primary text-floral-white"
-                        cdkFocusInitial>Submit</button>
-                </div>
-            </form>
-        </div>
+            <div mat-dialog-actions align="end">
+                <button mat-button class="background-primary text-floral-white" cdkFocusInitial>Cancel</button>
+                <button type="submit" mat-button class="background-primary text-floral-white"
+                    cdkFocusInitial>Submit</button>
+            </div>
+        </form>
     </div>
 </mat-card>

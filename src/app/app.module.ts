@@ -41,7 +41,6 @@ import { MatRippleModule } from '@angular/material/core';
 
 import 'hammerjs';
 
-import { EmployeeComponent } from './employee/employee.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserService } from './services/user.service';
 import { BarcodeComponent } from './components/barcode/barcode.component';
@@ -133,6 +132,7 @@ import { WebaccessComponent } from './components/usersform/webaccess/webaccess.c
 import { TestingComponent } from './components/testing/testing.component';
 import { WebuserdetailsComponent } from './components/usersform/webuserdetails/webuserdetails.component';
 import { WebUserUpdateComponent } from './components/usersform/web-user-update/web-user-update.component';
+import { MLModelComponent } from './testComponents/mlmodel/mlmodel.component';
 
 
 
@@ -155,7 +155,6 @@ const CustomBreakpoints = [{
   declarations: [
     AppComponent,
     DashboardComponent,
-    EmployeeComponent,
     ContactComponent,
     BarcodeComponent,
     AnalyzereportComponent,
@@ -238,7 +237,8 @@ const CustomBreakpoints = [{
     WebaccessComponent,
     TestingComponent,
     WebuserdetailsComponent,
-    WebUserUpdateComponent
+    WebUserUpdateComponent,
+    MLModelComponent
 
 
 

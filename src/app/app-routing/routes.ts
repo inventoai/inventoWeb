@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from '../components/home/home.component';
-import { EmployeeComponent } from '../employee/employee.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ContactComponent } from '../contact/contact.component';
 import { BarcodeComponent } from '../components/barcode/barcode.component';
@@ -85,6 +84,7 @@ import { WebaccessComponent } from '../components/usersform/webaccess/webaccess.
 import { TestingComponent } from '../components/testing/testing.component';
 import { WebuserdetailsComponent } from '../components/usersform/webuserdetails/webuserdetails.component';
 import { WebUserUpdateComponent } from '../components/usersform/web-user-update/web-user-update.component';
+import { MLModelComponent } from '../testComponents/mlmodel/mlmodel.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -108,9 +108,8 @@ export const routes: Routes = [
         path: 'default', component: DefaultComponent,
         children: [
             { path: '', redirectTo: 'Dashboard', pathMatch: 'full' },
-            { path: 'testing', component: TestingComponent},
+            { path: 'testing', component: TestingComponent },
             { path: 'Dashboard', component: DashboardComponent },
-            { path: 'employee', component: EmployeeComponent },
             { path: 'Employee', component: EmployeeListComponent },
 
             {
@@ -126,12 +125,13 @@ export const routes: Routes = [
             { path: 'addemployee', component: CreateEmployeeComponent },
             { path: 'updateemployee/:_id', component: UpdateEmployeeComponent },
             { path: 'detailsemployee/:_id', component: EmployeeDetailsComponent },
-            { path: 'App Users', component: AppUsersListComponent},
-            { path: 'Web Users', component: WebUsersListComponent},
+            { path: 'App Users', component: AppUsersListComponent },
+            { path: 'Web Users', component: WebUsersListComponent },
             { path: 'detailswebusers/:_id', component: WebuserdetailsComponent },
             { path: 'updatewebuser/:_id', component: WebUserUpdateComponent },
             { path: 'addappuser', component: AccessUsersGroupComponent },
-            { path: 'addwebuser', component: WebaccessComponent},
+            { path: 'inventomodel', component: MLModelComponent },
+            { path: 'addwebuser', component: WebaccessComponent },
 
 
             {

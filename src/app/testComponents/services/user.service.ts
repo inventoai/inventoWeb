@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,12 @@ export class UserService {
 
   getUsersList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
+  }
+
+  objectCounting(objectData: FormData): Observable<any> {
+    return this.http.post(`${environment.objUrl}/detections`, objectData);
+  }
+  objectClassification(objectData11: FormData): Observable<any> {
+    return this.http.post(`${environment.objUrl}/image`, objectData11, { responseType: 'blob'});
   }
 }
