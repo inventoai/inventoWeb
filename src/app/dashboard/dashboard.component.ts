@@ -20,12 +20,14 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.users = '../../assets/images/Img1.png';
-    console.log(this.jsonObject);
-    console.log("Total_Object = " + this.keyCount);
+    this.users = `assets/images/Img1.png`;
+    // console.log(this.jsonObject);
+    // console.log("Total_Object = " + this.keyCount);
     this.createSvg();
     this.drawBars(this.data);
-
+    console.log(`this is dashboard`)
+    let auth = JSON.parse(localStorage.getItem(`credential`));
+    console.log(auth);
   }
 
   jsonObject = {
@@ -107,7 +109,7 @@ export class DashboardComponent implements OnInit {
 
 
   // Pie
-  public pieChartLabels: string[] = ['Barcode', 'Inventory Count', 'Advance Slotting', 'Category','Forecast'];
+  public pieChartLabels: string[] = ['Barcode', 'Inventory Count', 'Advance Slotting', 'Category', 'Forecast'];
   public pieChartData: number[] = [40, 20, 20, 10, 10];
   public pieChartType: string = 'pie';
 

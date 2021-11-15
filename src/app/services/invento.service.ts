@@ -17,10 +17,13 @@ export class InventoService {
   constructor(private http: HttpClient) { }
 
   getBarcodelist(): Observable<any> {
-    return this.http.get(`${environment.inventoServer}/barcodes`);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.get(`${environment.inventoServer}/barcodes/${auth}`);
   }
   getInventorylist(): Observable<any> {
-    return this.http.get(`${environment.inventoServer}/inventory`);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    return this.http.get(`${environment.inventoServer}/inventory/${auth}`);
   }
   getFrequentLevel1list(): Observable<any> {
     return this.http.get(`${environment.inventoServer}/frequentLevel1`);

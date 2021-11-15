@@ -1,22 +1,25 @@
 <mat-card style="margin:0.5%; position:inherit;">
   <form>
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="100px" fxLayoutGap.lt-md="2px">
+    <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="100px" fxLayoutGap.lt-md="2px">
 
-      <mat-form-field fxFlex appearance="outline">
+      <mat-form-field fxFlex="25" appearance="outline">
         <mat-label> Filter </mat-label>
         <input matInput type="text" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
           name="filter" required>
       </mat-form-field>
 
-      <mat-form-field fxFlex="8" appearance="outline">
+      <!-- <mat-form-field fxFlex="8" appearance="outline">
         <mat-label>Show</mat-label>
         <input matInput type="number" name="show" id="show" placeholder="eg. 1">
-      </mat-form-field>
-
-      <button fxFlex style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
-        routerLink='/default/inventomodel' routerLinkActive="active">Invento Model</button>
-      <button fxFlex style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
-        routerLink='/default/addappuser' routerLinkActive="active">Create App User</button>
+      </mat-form-field> -->
+      <div fxFlex="20">
+        <button type="button" class="btn btn-primary btn-lg btn-block" routerLink='/default/inventomodel'
+          routerLinkActive="active">Invento Model</button>
+      </div>
+      <div fxFlex="20">
+        <button type="button" class="btn btn-primary btn-lg btn-block" routerLink='/default/addappuser'
+          routerLinkActive="active">Create App User</button>
+      </div>
     </div>
 
     <!-- <label for="email">Filter:</label>
@@ -37,7 +40,7 @@
       <tr>
         <th scope="col">S.No</th>
         <th scope="col">App User Name</th>
-        <!--<th scope="col">App User Role</th>-->
+        <th scope="col">App User Role</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
@@ -45,28 +48,26 @@
       <tr *ngFor="let appUser of appUsers | async | filter:searchText;let i=index">
         <td scope="row"> {{i+1}} </td>
         <td>{{appUser.username}}</td>
-        <!--<td *ngFor= "let R of appUser.roles"> 
-              <ul >
-                  <li>Adavance Slotting: {{R.advanceslotting}}</li>
-                  <li>Barcode Scanner: {{R.barcodescanner}}</li>
-                  <li>Inventory Count: {{R.inventorycount}}</li>
-              </ul>
-               </td>-->
+        <td>
+          <div *ngFor="let role of appUser.roles | keyvalue" class="roles">
+            <ul *ngIf="role.value" is true>
+              <li> {{role.key | uppercase}} </li>
+            </ul>
+          </div>
+        </td>
 
         <td>
-          <div style="width: 175px; text-align: center;">
-            <button mat-mini-fab color="check" style="position: inherit;">
+          <div>
+            <button mat-mini-fab color="check">
               <mat-icon>check</mat-icon>
             </button>
-            <button mat-mini-fab color="detail" (click)="userDetails(employee.id)"
-              style="margin:3px; position: inherit;">
+            <button mat-mini-fab color="detail" (click)="userDetails(appUser.id)">
               <mat-icon>remove_red_eye</mat-icon>
             </button>
-            <button mat-mini-fab color="update" (click)="updateUser(employee.id)"
-              style="margin: 3px; position: inherit;">
+            <button mat-mini-fab color="update" (click)="updateUser(appUser.id)">
               <mat-icon> border_color</mat-icon>
             </button>
-            <button mat-mini-fab color="delete" (click)="deleteUser(employee.id)" style="position: inherit;">
+            <button mat-mini-fab color="delete" (click)="deleteUser(appUser.id)">
               <mat-icon>delete</mat-icon>
             </button>
           </div>

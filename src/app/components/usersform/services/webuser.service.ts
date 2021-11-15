@@ -7,29 +7,36 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class WebuserService {
- //private baseUrl = 'http://inventowebapis-env.eba-7bpn3x7j.us-east-2.elasticbeanstalk.com/employees';
- //private baseUrl = 'http://127.0.0.1:4000';
- //private baseUrl1 = 'http://127.0.0.1:4000/webusers';
+  //private baseUrl = 'http://inventowebapis-env.eba-7bpn3x7j.us-east-2.elasticbeanstalk.com/employees';
+  //private baseUrl = 'http://127.0.0.1:4000';
+  //private baseUrl1 = 'http://127.0.0.1:4000/webusers';
 
- constructor(private http: HttpClient) { }
 
- getWebUser(_id: string): Observable<any> {
-   return this.http.get(`${environment.inventoServer}/webusers/${_id}`);
- }
+  constructor(private http: HttpClient) { }
 
- createWebUser(webUser: Object): Observable<Object> {
-   return this.http.post(`${environment.inventoServer}/webuserregister`, webUser);
- }
+  getWebUser(_id: string): Observable<any> {
+    return this.http.get(`${environment.inventoServer}/webusers/${_id}`);
+  }
 
- updateWebUser(_id: string, value: any): Observable<Object> {
-   return this.http.put(`${environment.inventoServer}/webusers/${_id}`, value);
- }
+  createWebUser(webUser: Object): Observable<Object> {
+    let auth = JSON.parse(localStorage.getItem(`credential`)).id;
+    console.log(auth);
+    return this.http.post(`${environment.inventoServer}/webusers/${auth}`, webUser);
+  }
 
- deleteWebUser(_id: string): Observable<any> {
-   return this.http.delete(`${environment.inventoServer}/${_id}`, { responseType: 'text' });
- }
+  updateWebUser(_id: string, value: any): Observable<Object> {
+    return this.http.put(`${environment.inventoServer}/webusers/${_id}`, value);
+  }
 
- getWebUsersList(): Observable<any> {
-   return this.http.get(`${environment.inventoServer}/webuserregister`);
- }
+  deleteWebUser(_id: string): Observable<any> {
+    let auth = JSON.parse(localStorage.getItem(`credential`)).id;
+    console.log(auth);
+    return this.http.delete(`${environment.inventoServer}/webusers/${auth}${_id}`, { responseType: 'text' });
+  }
+
+  getWebUsersList(): Observable<any> {
+    let auth = JSON.parse(localStorage.getItem(`credential`)).id;
+    console.log(auth);
+    return this.http.get(`${environment.inventoServer}/webusers/${auth}`);
+  }
 }

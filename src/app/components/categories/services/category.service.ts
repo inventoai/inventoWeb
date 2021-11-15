@@ -18,7 +18,9 @@ export class CategoryService {
   }
 
   createCategory(category: Object): Observable<Object> {
-    return this.http.post(`${environment.inventoServer}/categories`, category);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.post(`${environment.inventoServer}/categories/${auth}`, category);
   }
 
   updateCategory(_id: string, value: any): Observable<Object> {
@@ -30,6 +32,8 @@ export class CategoryService {
   }
 
   getCategorylist(): Observable<any> {
-    return this.http.get(`${environment.inventoServer}/categories`);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.get(`${environment.inventoServer}/categories/${auth}`);
   }
 }

@@ -1,41 +1,49 @@
-.container {
+// .container {
     
-    margin-top: 0%;
+//     margin-top: 0%;
     
-    margin-left: 15%;
-    margin-bottom: 10%;
+//     margin-left: 15%;
+//     margin-bottom: 10%;
     
-    margin-right: 40%;
-    background-color: whitesmoke;
-    width: 70%;
+//     margin-right: 40%;
+//     background-color: whitesmoke;
+//     width: 70%;
     
-}
+// }
 
 
-.half-width{
-    width: 75%;
-}
+// .half-width{
+//     width: 75%;
+// }
 
 
 
-.bsubutton{
-    height: 70px ;
-    width: 82%;
-    background-color: rgba(35, 132, 211, 1);
-    font-size: 20px;
-    color: white;
-    border-radius: 3px 3px 3px 3px;
-    border: solid rgba(35, 132, 211, 1) 1px;
-    margin-left: 10%;
+// .bsubutton{
+//     height: 70px ;
+//     width: 82%;
+//     background-color: rgba(35, 132, 211, 1);
+//     font-size: 20px;
+//     color: white;
+//     border-radius: 3px 3px 3px 3px;
+//     border: solid rgba(35, 132, 211, 1) 1px;
+//     margin-left: 10%;
     
-}
+// }
 
-.input-group{
-    margin: 8%;
-}
+// .input-group{
+//     margin: 8%;
+// }
 
 .reset{
-    margin-top: 4%;
+    margin-top: 6%;
     text-align: center;
 }
 
+
+
+.itForm{
+    margin-top: 4%;
+    justify-content: space-between;
+    font-size: 12px;
+    display: flex;
+}

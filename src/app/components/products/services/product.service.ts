@@ -18,7 +18,9 @@ export class ProductService {
   }
 
   createProduct(product: Object): Observable<Object> {
-    return this.http.post(`${environment.inventoServer}/products`, product);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.post(`${environment.inventoServer}/products/${auth}`, product);
   }
 
   updateProduct(_id: string, value: any): Observable<Object> {
@@ -30,6 +32,8 @@ export class ProductService {
   }
 
   getProductlist(): Observable<any> {
-    return this.http.get(`${environment.inventoServer}/products`);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.get(`${environment.inventoServer}/products/${auth}`);
   }
 }

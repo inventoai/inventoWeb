@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { WebUsers } from '../../employee/models/employee';
-import { LoginService } from '../../logins/services/login.service';
 import { WebuserService } from '../services/webuser.service';
 
 @Component({
@@ -12,32 +11,27 @@ import { WebuserService } from '../services/webuser.service';
 })
 export class WebUsersListComponent implements OnInit {
 
-  
-  webUsers:Observable<WebUsers[]>;
+
+  webUsers: Observable<WebUsers[]>;
   userAccessRoles;
-  
-  constructor(private appUsersService: WebuserService, private userRolesService: LoginService,
-    private router: Router) {
-      console.log(this.userRolesService.roles);
-      this.userAccessRoles = this.userRolesService.roles;
-     }
+
+  constructor(private appUsersService: WebuserService, private router: Router) { }
 
   ngOnInit() {
-   /* console.log("Check roles");
-    console.log(this.userAccessRoles.roles.advanceslotting);
-    if (this.userAccessRoles.roles.advanceslotting == false) {
+    let clientName = JSON.parse(localStorage.getItem("credential")).name;
+    // console.log(auth);
+    if (clientName != "Defel" && clientName != "Izeetek") {
       this.router.navigate(['/default/testing']);
-    }*/
+    }
     this.reloadData();
-    console.log(this.webUsers);
-    console.log(" Working")
-
+    // console.log(this.webUsers);
+    // console.log(" Working")
   }
 
   reloadData() {
     this.webUsers = this.appUsersService.getWebUsersList();
-    console.log("Not Working")
-}
+    // console.log("Not Working");
+  }
 
   deleteUser(_id: string) {
     this.appUsersService.deleteWebUser(_id)
@@ -56,7 +50,7 @@ export class WebUsersListComponent implements OnInit {
   }
 
 
-  
+
   searchText;
 
 }

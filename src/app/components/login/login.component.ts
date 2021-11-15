@@ -13,5 +13,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.logo = `assets/images/inventoLogo.jpg`;
   }
+  click() {
+    alert("BSU page is under construction.");
+  }
 
 }

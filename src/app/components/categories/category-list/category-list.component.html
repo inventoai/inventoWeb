@@ -1,6 +1,6 @@
 <mat-card style="margin:0.5%; position:inherit;">
-  <form class="form-inline">
-    <label for="email">Filter:</label>
+  <form>
+    <!-- <label for="email">Filter:</label>
     <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
       name="email">
     <label for="pwd">Show:</label>
@@ -8,7 +8,19 @@
       <option value="">10</option>
     </select>
     <button style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
-      routerLink='/default/createcategory' routerLinkActive="active">Create New Category</button>
+      routerLink='/default/createcategory' routerLinkActive="active">Create New Category</button> -->
+
+    <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
+      <mat-form-field fxFlex="25" appearance="outline">
+        <mat-label>Filter</mat-label>
+        <input matInput type="text" id="filter" placeholder="Type to Filter..." [(ngModel)]="searchText"
+          autocomplete="on" name="filter">
+      </mat-form-field>
+      <div fxFlex="20">
+        <button type="button" class="btn btn-primary btn-lg btn-block" routerLink='/default/createcategory'
+          routerLinkActive="active">Create New Category</button>
+      </div>
+    </div>
   </form>
 </mat-card>
 

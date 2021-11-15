@@ -1,8 +1,8 @@
 <mat-card>
     <form action="">
 
-        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="10px">
-            <mat-form-field fxFlex appearance="outline">
+        <div class="scan" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex="25" appearance="outline">
                 <mat-label>Select Date Range</mat-label>
                 <mat-date-range-input [rangePicker]="picker" [formGroup]="range">
                     <input matStartDate placeholder="Start Date" formControlName="start">
@@ -12,7 +12,7 @@
                 <mat-date-range-picker #picker></mat-date-range-picker>
             </mat-form-field>
 
-            <mat-form-field fxFlex appearance="outline">
+            <mat-form-field fxFlex="25" appearance="outline">
                 <mat-label>Select Business Location</mat-label>
                 <select matNativeControl [disabled]="disableSelect.value">
                     <option value="" selected></option>
@@ -21,8 +21,10 @@
                     </option>
                 </select>
             </mat-form-field>
-
-            <button fxFlex type="submit">Get Report</button>
+            <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button> -->
+            <div fxFlex="20">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Get Report</button>
+            </div>
         </div>
     </form>
 </mat-card>

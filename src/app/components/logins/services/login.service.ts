@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../../environments/environment';
 import { User } from '../models/user';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
@@ -14,8 +15,15 @@ export class LoginService {
         private http: HttpClient
     ) { }
 
-    login(Form) {
-        return this.http.post<User>(`${environment.inventoServer}/webuserlogin`, Form);
+    getClientList():Observable<any>{
+        return this.http.get(`${environment.inventoServer}/admin`)
+    }
+
+    AdminLogin(Form) {
+        return this.http.post<User>(`${environment.inventoServer}/loginadmin`, Form);
+    }
+    WebuserLogin(_clientId:string, Form) {
+        return this.http.post<User>(`${environment.inventoServer}/webuserlogin/${_clientId}`, Form);
     }
 
     logout() {

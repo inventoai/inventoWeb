@@ -3,7 +3,6 @@ import { Observable } from "rxjs";
 import { Product } from "../models/product";
 import { Router } from '@angular/router';
 import { ProductService } from "../services/product.service";
-import { LoginService } from "../../logins/services/login.service";
 
 @Component({
   selector: 'app-product-list',
@@ -17,26 +16,35 @@ export class ProductListComponent implements OnInit {
   products: Observable<Product[]>;
   numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  constructor(private productService: ProductService,private userRolesService:LoginService, private router: Router) {
-    console.log(this.userRolesService.roles);
-    this.userAccessRoles = this.userRolesService.roles;
-   }
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
-    console.log("Check roles");
-    console.log(this.userAccessRoles.roles.product);
-    if (this.userAccessRoles.roles.product == false) {
-      this.router.navigate(['/default/testing']);
+    let auth = JSON.parse(localStorage.getItem("credential"));
+    // console.log(auth);
+    try {
+      // Calling an undefined `item `variable
+      if (auth.roles.product == false) {
+        console.log("Hello !" + auth.name);
+        this.router.navigate(['/default/testing']);
+      }
+    } catch (e) {
+      if (e instanceof ReferenceError) {
+        console.log(e, true);
+        console.log("Hi ! " + auth.name);
+      } else {
+        console.log(e, false);
+        console.log("Hi ! " + auth.name);
+      }
     }
     this.reloadData();
-    console.log(this.products);
-    console.log(" Working")
+    // console.log(this.products);
+    // console.log(" Working")
 
   }
 
   reloadData() {
     this.products = this.productService.getProductlist();
-    console.log("Not Working")
+    // console.log("Not Working")
   }
 
   deleteProduct(_id: string) {

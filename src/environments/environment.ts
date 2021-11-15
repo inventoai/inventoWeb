@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   //apiUrl: 'http://localhost:4000',
   objUrl: 'https://inventomodel2.herokuapp.com',
-  inventoServer: 'https://invento-server.herokuapp.com',
+  //inventoServer: 'https://invento-server.herokuapp.com',
+  inventoServer: 'http://127.0.0.1:5000'
  // apiUrl: 'http://127.0.0.1:8080',
   //apiUrl: 'http://inventowebapis-env.eba-7bpn3x7j.us-east-2.elasticbeanstalk.com',
   //loginApi: 'http://127.0.0.1:5000/login'

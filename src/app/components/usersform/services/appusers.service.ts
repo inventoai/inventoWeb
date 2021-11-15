@@ -19,7 +19,8 @@ export class AppusersService {
   }
 
   createAppUser(employee: Object): Observable<Object> {
-    return this.http.post(`${environment.inventoServer}/userregister`, employee);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    return this.http.post(`${environment.inventoServer}/appusers/${auth}`, employee);
   }
 
   updateAppUser(_id: string, value: any): Observable<Object> {
@@ -31,6 +32,7 @@ export class AppusersService {
   }
 
   getAppUsersList(): Observable<any> {
-    return this.http.get(`${environment.inventoServer}/userregister`);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    return this.http.get(`${environment.inventoServer}/appusers/${auth}`);
   }
 }

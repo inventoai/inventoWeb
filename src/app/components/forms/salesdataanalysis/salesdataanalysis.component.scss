@@ -1,92 +1,27 @@
-$background-moredark: #0C2531;
+$background-moredark: #0c2531;
 .active {
-    background: $background-moredark;
-    color: white;
-}
-
-.button{
-  background-color:rgba(238, 28, 37, 1);
-  height: 55px;
-}
-
-
-.form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  }
-  
-  .form-inline label {
-  margin: 1% 1% 1% 1%;
-  }
-  
-  .form-inline input {
-  vertical-align: middle;
-  margin: 1% 28% 1% 1%;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  }
-  .form-inline select {
-  vertical-align: middle;
-  margin: 5px 5% 5px 1%;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  }
-  
-  .form-inline button {
-  padding: 10px 20px;
-  margin: 5px 5% 5px 5%;
-  background-color: #0C2531;
-  border: 1px solid #ddd;
+  background: $background-moredark;
   color: white;
-  cursor: pointer;
-  width: 300px;
-  height: 50px;
-  }
-  
-  .form-inline button:hover {
-  background-color: #D1C4E9;
-  color: #0C2531;
-  }
-  
-  @media (max-width: 800px) {
-  .form-inline input {
-    margin: 10px 0;
-  }
-  .form-inline select {
-    margin: 10px 0;
-  }
-  
-  .form-inline {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  }
-
-  .example-button-row button,
-.example-button-row a {
-  height: 50px;
-  width: 150px;
-  border-radius: 3px 3px 3px 3px;
-  border: solid rgba(12, 37, 49, 0.6) 2px;
 }
 
- 
-th{
+.actionBoard {
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+th {
   border: 1px solid grey;
   border-collapse: collapse;
   padding: 5px;
   color: white;
-  background-color:#0C2531 ;
+  background-color: #0c2531;
   height: 50px;
   font-size: 15px;
   border-radius: 0px 0px 0px 0px;
   text-align: center;
 }
 
-td{
+td {
   border-collapse: collapse;
   padding: 5px;
   height: 50px;
@@ -94,7 +29,7 @@ td{
   border-radius: 0px 0px 0px 0px;
   text-align: center;
 }
-table{
+table {
   border-radius: 5px 5px 5px 5px;
   border-collapse: collapse;
   padding: 5px;
@@ -110,9 +45,9 @@ table tr:nth-child(even) {
 }
 
 .table-responsive {
-overflow-y: auto;
-height: 330px;
-width: 99%;
+  overflow-y: auto;
+  height: 330px;
+  width: 99%;
 }
 .table-responsive thead th {
   position: sticky;

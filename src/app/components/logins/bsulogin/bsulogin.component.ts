@@ -40,11 +40,11 @@ export class BsuloginComponent implements OnInit {
         this.loading = true;
         let Form = JSON.stringify(this.form.value);
         console.log(Form);
-        this.loginService.login(Form).subscribe(data => {
-            console.log(data);
-            this.gotoDashboard();
-        },
-            error => console.log(error));
+        // this.loginService.login(Form).subscribe(data => {
+        //     console.log(data);
+        //     this.gotoDashboard();
+        // },
+        //     error => console.log(error));
     }
 
     

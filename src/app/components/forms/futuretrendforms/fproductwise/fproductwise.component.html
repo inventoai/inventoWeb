@@ -1,8 +1,8 @@
 <mat-card>
     <form action="">
 
-        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="200px" fxLayoutGap.lt-md="0px">
-            <mat-form-field fxFlex appearance="outline">
+        <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="200px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex="25" appearance="outline">
                 <mat-label>Select Report Type</mat-label>
                 <select matNativeControl [disabled]="disableSelect.value">
                     <option value="" selected></option>
@@ -11,8 +11,8 @@
                     </option>
                 </select>
             </mat-form-field>
-       
-            <mat-form-field fxFlex appearance="outline">
+
+            <mat-form-field fxFlex="25" appearance="outline">
                 <mat-label>Select Product Type</mat-label>
                 <select matNativeControl [disabled]="disableSelect.value">
                     <option value="" selected></option>
@@ -22,7 +22,9 @@
                 </select>
             </mat-form-field>
 
-            <button fxFlex type="submit">Get Report</button>
+            <div fxFlex="20">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Get Report</button>
+            </div>
         </div>
 
     </form>
@@ -30,18 +32,25 @@
 </mat-card>
 
 
-<div style="margin:0.5%; position:inherit;">
-    <form class="form-inline">
-        <label for="email">Filter:</label>
+<div style="margin-left: 1.5%; margin-top: 1%; margin-right: 1.5%; position:inherit;">
+    <form>
+        <!-- <label for="email">Filter:</label>
         <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
             name="email">
         <label for="pwd">Show:</label>
         <select name="" id="">
             <option value="">5</option>
-        </select>
+        </select> -->
 
-        <div>
-            <button class="btn btn-success btn-block" (click)="openPDF()"><b>Download PDF</b></button>
+        <div class="actionBoard" fxlayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>Filter</mat-label>
+                <input matInput type="text" id="filter" name="filter" placeholder="Type to filter..."
+                    [(ngModel)]="searchText">
+            </mat-form-field>
+            <div fxFlex="20">
+                <button class="btn btn-primary btn-lg btn-block" (click)="openPDF()">Download PDF</button>
+            </div>
         </div>
     </form>
 </div>

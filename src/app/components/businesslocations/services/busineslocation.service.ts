@@ -17,7 +17,9 @@ export class BusineslocationService {
   }
 
   createLocation(location: Object): Observable<Object> {
-    return this.http.post(`${environment.inventoServer}/businesslocations`, location);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.post(`${environment.inventoServer}/businesslocations/${auth}`, location);
   }
 
   updateLocation(_id: string, value: any): Observable<Object> {
@@ -29,6 +31,8 @@ export class BusineslocationService {
   }
 
   getLocationlist(): Observable<any> {
-    return this.http.get(`${environment.inventoServer}/businesslocations`);
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.get(`${environment.inventoServer}/businesslocations/${auth}`);
   }
 }

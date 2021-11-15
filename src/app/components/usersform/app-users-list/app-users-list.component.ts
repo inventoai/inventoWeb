@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AppUsers } from '../../employee/models/employee';
-import { LoginService } from '../../logins/services/login.service';
 import { AppusersService } from '../services/appusers.service';
 
 @Component({
@@ -17,18 +16,16 @@ export class AppUsersListComponent implements OnInit {
   roles = ''
   userAccessRoles;
 
-  constructor(private appUsersService: AppusersService, private userRolesService: LoginService,
+  constructor(private appUsersService: AppusersService,
     private router: Router) {
-    console.log(this.userRolesService.roles);
-    this.userAccessRoles = this.userRolesService.roles;
   }
 
   ngOnInit() {
-    console.log("Initialized");
-   /* console.log(this.userAccessRoles.status);
-    if (this.userAccessRoles.status == 301) {
+    let clientName = JSON.parse(localStorage.getItem("credential")).name;
+    // console.log(auth);
+    if (clientName != "Defel" && clientName != "Izeetek") {
       this.router.navigate(['/default/testing']);
-    }*/
+    }
     this.reloadData();
     console.log(this.appUsers);
     console.log(" Working")
@@ -50,7 +47,8 @@ export class AppUsersListComponent implements OnInit {
         error => console.log(error));
   }
   updateUser(id: string) {
-    this.router.navigate(['/default/updateemployee', id]);
+    alert("This button is disable.")
+    // this.router.navigate(['/default/updateemployee', id]);
   }
   userDetails(_id: string) {
     this.router.navigate(['default/detailsemployee', _id]);
