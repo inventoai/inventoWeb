@@ -20,7 +20,7 @@ export class UserLoginComponent implements OnInit {
     submitted = false;
     userAccessRoles;
     clients: Observable<any>;
-    clientId;
+    // clientId;
     selected = 'loginadmin';
 
     constructor(
@@ -46,40 +46,21 @@ export class UserLoginComponent implements OnInit {
         this.loading = true;
         let Form = JSON.stringify(this.form.value);
         console.log(this.selected, Form);
-        if (this.selected == "loginadmin") {
-            this.loginService.AdminLogin(Form).subscribe(data => {
-                // this.userAccessRoles = data;
-                // console.log(this.userAccessRoles);
-                console.log(data);
-                // Create item:
-                // let myObj = { name: 'Ravi', profession: 'Developer' };
-                // localStorage.setItem("credential", JSON.stringify(myObj));
-                localStorage.setItem("credential", JSON.stringify(data));
-                // Read item:
-                // let item = JSON.parse(localStorage.getItem("credential"));
-                // console.log(item);
-                this.gotoDashboard();
-            },
-                error => console.log(error));
-        }
-        else if (this.selected == "webusers") {
-            console.log(this.clientId);
-            this.loginService.WebuserLogin(this.clientId, Form).subscribe(data => {
-                // this.userAccessRoles = data;
-                // console.log(this.userAccessRoles);
-                console.log(data);
-                // Create item:
-                // let myObj = { name: 'Ravi', profession: 'Developer' };
-                // localStorage.setItem("credential", JSON.stringify(myObj));
-                localStorage.setItem("credential", JSON.stringify(data));
-                // Read item:
-                // let item = JSON.parse(localStorage.getItem("credential"));
-                // console.log(item);
-                this.gotoDashboard();
-            },
-                error => console.log(error));
-        }
 
+        this.loginService.login(this.selected, Form).subscribe(data => {
+            // this.userAccessRoles = data;
+            // console.log(this.userAccessRoles);
+            console.log(data);
+            // Create item:
+            // let myObj = { name: 'Ravi', profession: 'Developer' };
+            // localStorage.setItem("credential", JSON.stringify(myObj));
+            localStorage.setItem("credential", JSON.stringify(data));
+            // Read item:
+            // let item = JSON.parse(localStorage.getItem("credential"));
+            // console.log(item);
+            this.gotoDashboard();
+        },
+            error => console.log(error));
     }
     gotoDashboard() {
         // this.loginService.roles = this.userAccessRoles;
@@ -95,21 +76,21 @@ export class UserLoginComponent implements OnInit {
         console.log("Opened form")
     }
 
-    fetchClients(loginType) {
-        console.log(loginType);
-        this.clientId = document.getElementById("clientBlockId");
-        if (loginType == "webusers") {
-            this.clientId.style.display = "block";
-            this.loginService.getClientList().subscribe(data => {
-                this.clients = data;
-                console.log(this.clients);
-            },
-                err => console.log(err)
-            );
-        }
-        else {
-            this.clientId.style.display = "none";
-        }
-    }
+    // fetchClients(loginType) {
+    //     console.log(loginType);
+    //     this.clientId = document.getElementById("clientBlockId");
+    //     if (loginType == "webusers") {
+    //         this.clientId.style.display = "block";
+    //         this.loginService.getClientList().subscribe(data => {
+    //             this.clients = data;
+    //             console.log(this.clients);
+    //         },
+    //             err => console.log(err)
+    //         );
+    //     }
+    //     else {
+    //         this.clientId.style.display = "none";
+    //     }
+    // }
 
 }

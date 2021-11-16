@@ -101,7 +101,8 @@ export const routes: Routes = [
             { path: 'userlogin', component: UserLoginComponent },
             { path: 'it', component: ItComponent },
             { path: 'bsu', component: BsuComponent },
-            { path: 'bsulogin', component: BsuloginComponent }
+            { path: 'bsulogin', component: BsuloginComponent },
+            { path: 'testing', component: TestingComponent },
         ]
     },
     {

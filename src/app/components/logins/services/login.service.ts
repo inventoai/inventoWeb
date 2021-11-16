@@ -15,15 +15,19 @@ export class LoginService {
         private http: HttpClient
     ) { }
 
-    getClientList():Observable<any>{
+    getClientList(): Observable<any> {
         return this.http.get(`${environment.inventoServer}/admin`)
     }
 
-    AdminLogin(Form) {
-        return this.http.post<User>(`${environment.inventoServer}/loginadmin`, Form);
-    }
-    WebuserLogin(_clientId:string, Form) {
-        return this.http.post<User>(`${environment.inventoServer}/webuserlogin/${_clientId}`, Form);
+    // AdminLogin(Form) {
+    //     return this.http.post<User>(`${environment.inventoServer}/loginadmin`, Form);
+    // }
+    // WebuserLogin(_clientId:string, Form) {
+    //     return this.http.post<User>(`${environment.inventoServer}/webuserlogin/${_clientId}`, Form);
+    // }
+    login(loginType: string, Form) {
+        // let auth = JSON.parse(localStorage.getItem("credential")).id;
+        return this.http.post<User>(`${environment.inventoServer}/${loginType}`, Form);
     }
 
     logout() {
@@ -31,15 +35,15 @@ export class LoginService {
     }
 
     register(user: User) {
-        return this.http.post(`${environment.inventoServer}/users/register`, user);
+        return this.http.post(`${environment.inventoServer} / users / register`, user);
     }
 
     getAll() {
-        return this.http.get<User[]>(`${environment.inventoServer}/users`);
+        return this.http.get<User[]>(`${environment.inventoServer} / users`);
     }
 
     getById(id: string) {
-        return this.http.get<User>(`${environment.inventoServer}/users/${id}`);
+        return this.http.get<User>(`${environment.inventoServer} / users / ${id}`);
     }
 
 

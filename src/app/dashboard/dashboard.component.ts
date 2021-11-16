@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from "d3";
 import { Router } from '@angular/router';
+import { WebuserService } from '../components/usersform/services/webuser.service';
+import { AppusersService } from '../components/usersform/services/appusers.service';
+import { InventoService } from '../services/invento.service';
+import { ProductService } from '../components/products/services/product.service';
+import { BusineslocationService } from '../components/businesslocations/services/busineslocation.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,13 +16,22 @@ export class DashboardComponent implements OnInit {
   content = 'Angular highlight text';
   users = '';
   query_conversation;
+  web_users: number;
+  app_users: number;
+  total_users: number = 0;
+  total_scan: number = 0;
+  total_product: number = 0;
+  total_inventory: number = 0;
+  total_locations: number = 0;
 
   todayNumber: number = Date.now();
   todayDate: Date = new Date();
   todayString: string = new Date().toDateString();
   todayISOString: string = new Date().toISOString();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private webUserService: WebuserService,
+    private appUserservice: AppusersService, private scanService: InventoService,
+    private productService: ProductService, private locationService: BusineslocationService) { }
 
   ngOnInit(): void {
     this.users = `assets/images/Img1.png`;
@@ -28,6 +42,30 @@ export class DashboardComponent implements OnInit {
     console.log(`this is dashboard`)
     let auth = JSON.parse(localStorage.getItem(`credential`));
     console.log(auth);
+    this.webUserService.getWebUsersList().subscribe(data => {
+      this.web_users = Object.keys(data).length;
+      console.log("Webcount: " + this.web_users);
+      this.total_users = this.total_users + this.web_users;
+    });
+    this.appUserservice.getAppUsersList().subscribe(data => {
+      this.app_users = Object.keys(data).length;
+      console.log("Appcount:" + this.app_users);
+      this.total_users = this.total_users + this.app_users;
+    });
+
+    this.scanService.getBarcodelist().subscribe(data => {
+      this.total_scan = Object.keys(data).length;
+    });
+    this.productService.getProductlist().subscribe(data => {
+      this.total_product = Object.keys(data).length;
+    });
+    this.scanService.getInventorylist().subscribe(data => {
+      this.total_inventory = Object.keys(data).length;
+    });
+    this.locationService.getLocationlist().subscribe(data => {
+      this.total_locations = Object.keys(data).length;
+    })
+
   }
 
   jsonObject = {
@@ -51,11 +89,11 @@ export class DashboardComponent implements OnInit {
 
 
   private data = [
-    { "Framework": "Vue", "Stars": "166443", "Released": "2014" },
-    { "Framework": "React", "Stars": "150793", "Released": "2013" },
-    { "Framework": "Angular", "Stars": "62342", "Released": "2016" },
-    { "Framework": "Backbone", "Stars": "27647", "Released": "2010" },
-    { "Framework": "Ember", "Stars": "21471", "Released": "2011" },
+    { "Framework": "Web Users", "Stars": "166443", "Released": "2014" },
+    { "Framework": "App Users", "Stars": "150793", "Released": "2013" },
+    { "Framework": "Category", "Stars": "62342", "Released": "2016" },
+    { "Framework": "Product", "Stars": "27647", "Released": "2010" },
+    { "Framework": "Location", "Stars": "21471", "Released": "2011" },
   ];
   private svg;
   private margin = 50;
@@ -109,7 +147,7 @@ export class DashboardComponent implements OnInit {
 
 
   // Pie
-  public pieChartLabels: string[] = ['Barcode', 'Inventory Count', 'Advance Slotting', 'Category', 'Forecast'];
+  public pieChartLabels: string[] = ['Barcode', 'Inventory Count', 'Advance Slotting', 'Analyze Report', 'Forecast'];
   public pieChartData: number[] = [40, 20, 20, 10, 10];
   public pieChartType: string = 'pie';
 

@@ -47,3 +47,32 @@
     font-size: 12px;
     display: flex;
 }
+
+
+
+
+p {
+    font-family: Lato;
+  }
+  
+  
+  #container {
+    // display:flex;
+    justify-content: center;
+    // align-items:center;
+    height:100%;
+  
+    #dimensions {
+    //   display:flex;
+    //   justify-content:space-around;
+    //   align-items: center;
+  
+      div {
+        margin-top:25px;
+        margin-bottom:25px;
+      }
+    }
+  }
+  
+  
+  

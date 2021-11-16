@@ -1,48 +1,39 @@
-import {Component} from '@angular/core';
-import {AppComponentModel} from './app.component.model';
-import {animate, style, transition, trigger} from '@angular/animations';
-import { ApplicationStateService } from './services/application-state.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('userProfileAnimation', [
-      transition('void => *', [
-        style({opacity: 0, marginTop: 500}),
-        animate('200ms ease-in', style({opacity: 1, marginTop: 50}))
-      ]),
-      transition('* => void', [
-        animate('150ms ease-out', style({opacity: 0, marginTop: 500}))
-      ])
-    ])
-  ]
+  host: {
+    "(window:resize)": "onWindowResize($event)"
+  }
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  public myViewModel: AppComponentModel;
-  public isMobileResolution: boolean;
-  private model: AppComponentModel;
+  name = 'Angular';
+  isMobile: boolean = false;
+  width: number = window.innerWidth;
+  height: number = window.innerHeight;
+  mobileWidth: number = 760;
+  constructor(private router: Router) { }
 
-  constructor(private applicationStateService: ApplicationStateService) {
-    this.model = new AppComponentModel();
-    this.myViewModel = new AppComponentModel();
-
-    this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
-  }
-
-  public onUserProfileClick(): void {
-    if (this.model.isToShowUserProfile) {
-      this.model.isToShowUserProfile = false;
-    } else {
-      this.model.isToShowUserProfile = true;
+  ngOnInit(): void {
+    this.isMobile = this.width < this.mobileWidth;
+    console.log("This is Root page.")
+    let auth = JSON.parse(localStorage.getItem("credential"));
+    // console.log(auth);
+    // this.router.navigate(['/default/testing']);
+    if (this.isMobile == true) {
+      this.router.navigate(['/login/testing']);
     }
-
-    this.updateView();
   }
 
-  private updateView(): void {
-    this.myViewModel = this.model.clone();
+
+  onWindowResize(event) {
+    this.width = event.target.innerWidth;
+    this.height = event.target.innerHeight;
+    this.isMobile = this.width < this.mobileWidth;
   }
+
 }

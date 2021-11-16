@@ -1,4 +1,7 @@
-<!-- <div class="container">
+<div id="container">
+    <div id="dimensions">
+        <div>
+            <!-- <div class="container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="input-group">
             <mat-form-field class="half-width" appearance="outline">
@@ -34,70 +37,86 @@
     </form>
 </div> -->
 
-<mat-card style="margin-left: 10%; margin-right: 10%; margin-bottom: 5%;">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-card style="margin-left: 10%; margin-right: 10%; margin-bottom: 5%;">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <div class="itForm" fxLayout="column" fxLayoutGap="10px">
-            <div fxLayout="row" fxLayout.lt-md="row">
-                <mat-form-field fxFlex appearance="outline">
-                    <mat-label> Login Type </mat-label>
-                    <mat-select id="loginType" name="loginType" [(ngModel)]="selected" placeholder="Mode"
-                        (selectionChange)="fetchClients($event.value)" [ngModelOptions]="{standalone: true}" required>
-                        <mat-option value="loginadmin">Admin</mat-option>
-                        <mat-option value="webusers">Webuser</mat-option>
-                    </mat-select>
-                    <span matPrefix>
-                        <mat-icon>account_box</mat-icon>
-                    </span>
-                </mat-form-field>
-                <mat-form-field fxFlex id="clientBlockId" style="display: none; margin-left: 5px;" appearance="outline">
-                    <mat-label>Select Clients</mat-label>
-                    <mat-select id="clientName" name="clientName" [(ngModel)]="clientId"
-                        [ngModelOptions]="{standalone: true}">
-                        <mat-option *ngFor="let client of clients" [value]="client.id">
-                            {{client.clientName}}
-                        </mat-option>
-                    </mat-select>
-                    <span matPrefix>
-                        <mat-icon>info</mat-icon>
-                    </span>
-                </mat-form-field>
-            </div>
+                    <div class="itForm" fxLayout="column" fxLayoutGap="10px">
+                        <mat-form-field fxFlex appearance="outline">
+                            <mat-label> Login Type </mat-label>
+                            <mat-select id="loginType" name="loginType" [(ngModel)]="selected" placeholder="Mode"
+                                [ngModelOptions]="{standalone: true}" required>
+                                <mat-option value="loginadmin">Admin</mat-option>
+                                <mat-option value="webuserlogin">Webuser</mat-option>
+                            </mat-select>
+                            <span matPrefix>
+                                <mat-icon>account_box</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <!-- <div fxLayout="row" fxLayout.lt-md="row">
+                            <mat-form-field fxFlex appearance="outline">
+                                <mat-label> Login Type </mat-label>
+                                <mat-select id="loginType" name="loginType" [(ngModel)]="selected" placeholder="Mode"
+                                    (selectionChange)="fetchClients($event.value)" [ngModelOptions]="{standalone: true}"
+                                    required>
+                                    <mat-option value="loginadmin">Admin</mat-option>
+                                    <mat-option value="webusers">Webuser</mat-option>
+                                </mat-select>
+                                <span matPrefix>
+                                    <mat-icon>account_box</mat-icon>
+                                </span>
+                            </mat-form-field>
+                            <mat-form-field fxFlex id="clientBlockId" style="display: none; margin-left: 5px;"
+                                appearance="outline">
+                                <mat-label>Select Clients</mat-label>
+                                <mat-select id="clientName" name="clientName" [(ngModel)]="clientId"
+                                    [ngModelOptions]="{standalone: true}">
+                                    <mat-option *ngFor="let client of clients" [value]="client.id">
+                                        {{client.clientName}}
+                                    </mat-option>
+                                </mat-select>
+                                <span matPrefix>
+                                    <mat-icon>info</mat-icon>
+                                </span>
+                            </mat-form-field>
+                        </div> -->
 
-            <mat-form-field fxFlex="30" appearance="outline">
-                <mat-label>Username</mat-label>
-                <input matInput type="text" placeholder="Enter your username" formControlName="userName">
-                <span matPrefix>
-                    <mat-icon>input</mat-icon>
-                </span>
-            </mat-form-field>
+                        <mat-form-field fxFlex="30" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input matInput type="text" placeholder="Enter your username" formControlName="userName">
+                            <span matPrefix>
+                                <mat-icon>input</mat-icon>
+                            </span>
+                        </mat-form-field>
 
-            <mat-form-field fxFlex="30" appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
-                    formControlName="password">
-                <span matPrefix>
-                    <mat-icon>security</mat-icon>
-                </span>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-            </mat-form-field>
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Password is required</div>
-            </div>
+                        <mat-form-field fxFlex="30" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                                formControlName="password">
+                            <span matPrefix>
+                                <mat-icon>security</mat-icon>
+                            </span>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
 
-            <div fxFlex="80">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-            </div>
-            <div class="reset">
-                <p><b>Forgot Password?</b>
-                    <span class="flex-spacer"></span>
-                    <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Reset
-                        Password</a>
-                </p>
-            </div>
+                        <div fxFlex="80">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                        </div>
+                        <div class="reset">
+                            <p><b>Forgot Password?</b>
+                                <span class="flex-spacer"></span>
+                                <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Reset
+                                    Password</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </mat-card>
         </div>
-    </form>
-</mat-card>
+    </div>
+</div>

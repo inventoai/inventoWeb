@@ -47,39 +47,51 @@ export class DefaultComponent implements OnInit, OnDestroy {
     console.log("This is default page.")
     let auth = JSON.parse(localStorage.getItem("credential"));
     console.log(auth);
-    if (auth.roles) {
-      for (let key in auth.roles) {
-        let value = auth.roles[key];
-        if (value == true) {
-          if (key == "advanceslotting") {
-            this.menuItems.push("Advance Slotting");
-          }
-          else if (key == "analyzereport") {
-            this.menuItems.push("Analyze Report");
-          }
-          else if (key == "barcodescanner") {
-            this.menuItems.push("Barcode Scanner");
-          }
-          else if (key == "inventorycount") {
-            this.menuItems.push("Inventory Countt");
-          }
-          else if (key == "location") {
-            this.menuItems.push("Business Location");
-          }
-          else if (key == "category") {
-            this.menuItems.push("Category");
-          }
-          else if (key == "forecast") {
-            this.menuItems.push("Forecast");
-          }
-          else if (key == "product") {
-            this.menuItems.push("Product");
+
+
+    try {
+      if (auth.roles) {
+        for (let key in auth.roles) {
+          let value = auth.roles[key];
+          if (value == true) {
+            if (key == "advanceslotting") {
+              this.menuItems.push("Advance Slotting");
+            }
+            else if (key == "analyzereport") {
+              this.menuItems.push("Analyze Report");
+            }
+            else if (key == "barcodescanner") {
+              this.menuItems.push("Barcode");
+            }
+            else if (key == "inventorycount") {
+              this.menuItems.push("Inventory Count");
+            }
+            else if (key == "location") {
+              this.menuItems.push("Business Location");
+            }
+            else if (key == "category") {
+              this.menuItems.push("Category");
+            }
+            else if (key == "forecast") {
+              this.menuItems.push("Forecast");
+            }
+            else if (key == "product") {
+              this.menuItems.push("Product");
+            }
           }
         }
+        console.log(this.menuItems);
+        this.menuItems1 = this.menuItems;
       }
-      console.log(this.menuItems);
-      this.menuItems1 = this.menuItems;
+
+    } catch (e) {
+      if (e instanceof ReferenceError) {
+
+      } else {
+        console.log(e, false);
+      }
     }
+
     console.log(this.menuItems1);
     // try {
     //   // Calling an undefined `item `variable
