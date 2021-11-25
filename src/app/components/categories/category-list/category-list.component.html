@@ -1,6 +1,6 @@
-<mat-card style="margin:0.5%; position:inherit;">
-  <form>
-    <!-- <label for="email">Filter:</label>
+<!-- <mat-card style="margin:0.5%; position:inherit;">
+  <form> -->
+<!-- <label for="email">Filter:</label>
     <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
       name="email">
     <label for="pwd">Show:</label>
@@ -10,7 +10,7 @@
     <button style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
       routerLink='/default/createcategory' routerLinkActive="active">Create New Category</button> -->
 
-    <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
+<!-- <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
       <mat-form-field fxFlex="25" appearance="outline">
         <mat-label>Filter</mat-label>
         <input matInput type="text" id="filter" placeholder="Type to Filter..." [(ngModel)]="searchText"
@@ -22,13 +22,35 @@
       </div>
     </div>
   </form>
-</mat-card>
+</mat-card> -->
 
 <br> <br>
 
 <div class="table-responsive">
   <table class="table">
     <thead>
+      <tr>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-search"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-delete_sweep"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-local_printshop"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button type="button" class="tablebutton" routerLink='/default/createcategory'>
+            <i class="material-icons-new outline-add"></i>
+          </button>
+        </th>
+      </tr>
       <tr>
         <th scope="col">S.No</th>
         <th scope="col">Category Id</th>
@@ -42,7 +64,8 @@
         <td>{{category.categoryId}}</td>
         <td> {{category.categoryName}} </td>
         <td>
-          <div style="width: 100%;">
+          Active
+          <!-- <div style="width: 100%;">
             <button mat-mini-fab color="check">
               <mat-icon>check</mat-icon>
             </button>
@@ -53,7 +76,7 @@
             <button mat-mini-fab color="delete" (click)="deleteCategory(category.id)">
               <mat-icon>delete</mat-icon>
             </button>
-          </div>
+          </div> -->
 
         </td>
       </tr>

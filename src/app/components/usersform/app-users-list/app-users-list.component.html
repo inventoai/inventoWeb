@@ -1,4 +1,4 @@
-<mat-card style="margin:0.5%; position:inherit;">
+<!-- <mat-card style="margin:0.5%; position:inherit;">
   <form>
     <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="100px" fxLayoutGap.lt-md="2px">
 
@@ -6,13 +6,13 @@
         <mat-label> Filter </mat-label>
         <input matInput type="text" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
           name="filter" required>
-      </mat-form-field>
+      </mat-form-field> -->
 
-      <!-- <mat-form-field fxFlex="8" appearance="outline">
+<!-- <mat-form-field fxFlex="8" appearance="outline">
         <mat-label>Show</mat-label>
         <input matInput type="number" name="show" id="show" placeholder="eg. 1">
       </mat-form-field> -->
-      <div fxFlex="20">
+<!-- <div fxFlex="20">
         <button type="button" class="btn btn-primary btn-lg btn-block" routerLink='/default/inventomodel'
           routerLinkActive="active">Invento Model</button>
       </div>
@@ -20,17 +20,17 @@
         <button type="button" class="btn btn-primary btn-lg btn-block" routerLink='/default/addappuser'
           routerLinkActive="active">Create App User</button>
       </div>
-    </div>
+    </div> -->
 
-    <!-- <label for="email">Filter:</label>
+<!-- <label for="email">Filter:</label>
     <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
       name="email">
     <label for="pwd">Show:</label>
     <select name="" id="">
       <option value="">10</option>
     </select> -->
-  </form>
-</mat-card>
+<!-- </form>
+</mat-card> -->
 
 <br> <br>
 
@@ -38,16 +38,38 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-search"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-local_printshop"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button type="button" class="tablebutton" routerLink='/default/inventomodel'>
+            <i class="material-icons-new outline-desktop_windows"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button type="button" class="tablebutton" routerLink='/default/addappuser'>
+            <i class="material-icons-new outline-person_add"></i>
+          </button>
+        </th>
+      </tr>
+      <tr>
         <th scope="col">S.No</th>
         <th scope="col">App User Name</th>
         <th scope="col">App User Role</th>
-        <th scope="col">Actions</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let appUser of appUsers | async | filter:searchText;let i=index">
         <td scope="row"> {{i+1}} </td>
-        <td>{{appUser.username}}</td>
+        <td>{{appUser.userName}}</td>
         <td>
           <div *ngFor="let role of appUser.roles | keyvalue" class="roles">
             <ul *ngIf="role.value" is true>
@@ -57,7 +79,7 @@
         </td>
 
         <td>
-          <div>
+          <!-- <div>
             <button mat-mini-fab color="check">
               <mat-icon>check</mat-icon>
             </button>
@@ -70,7 +92,8 @@
             <button mat-mini-fab color="delete" (click)="deleteUser(appUser.id)">
               <mat-icon>delete</mat-icon>
             </button>
-          </div>
+          </div> -->
+          Active
 
         </td>
       </tr>

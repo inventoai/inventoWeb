@@ -1,40 +1,42 @@
-$background-moredark: #0C2531;
+$background-moredark: #0c2531;
 .active {
-    background: $background-moredark;
-    color: white;
+  background: $background-moredark;
+  color: white;
 }
 
-.actionBoard{
+.actionBoard {
   font-size: 12px;
   justify-content: space-between;
 }
- 
-th{
-  border: 1px solid grey;
+
+th {
+  border: 1px solid gray;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 2px;
+  color: #0c2531;
+  background-color: #0c2531;
   color: white;
-  background-color:#0C2531 ;
-  height: 50px;
-  font-size: 15px;
+  height: 20px;
+  font-size: 9px;
   border-radius: 0px 0px 0px 0px;
   text-align: center;
 }
 
-td{
+td {
   border-collapse: collapse;
-  padding: 5px;
-  height: 50px;
-  font-size: 13px;
+  padding: 2px;
+  height: 20px;
+  font-size: 10px;
   border-radius: 0px 0px 0px 0px;
   text-align: center;
 }
-table{
-  border-radius: 5px 5px 5px 5px;
+table {
+  border-radius: 10px;
   border-collapse: collapse;
-  padding: 5px;
-  margin-left: 1%;
-  margin-right: 1%;
+  // border: 1px solid #0c2531;
+  // padding: 5px;
+  // margin-left: 1%;
+  // margin-right: 1%;
 }
 
 table tr:nth-child(odd) {
@@ -45,11 +47,26 @@ table tr:nth-child(even) {
 }
 
 .table-responsive {
-overflow-y: auto;
-height: 330px;
-width: 99%;
+  overflow-y: auto;
+  height: 400px;
+  // width: 99%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 .table-responsive thead th {
   position: sticky;
   top: 0;
+}
+
+.material-icons-new {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  // background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.tablebutton {
+  border-radius: 4px;
 }

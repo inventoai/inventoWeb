@@ -1,13 +1,13 @@
-$background-moredark: #0C2531;
-.active {
-    background: $background-moredark;
-    color: white;
-}
-
+$background-moredark: #0c2531;
 .example-button-row button,
 .example-button-row a {
-  height: 50px;
+  height: 38px;
   width: 150px;
-  border-radius: 3px 3px 3px 3px;
   border: solid rgba(12, 37, 49, 0.6) 2px;
+  font-size: 15px;
+}
+
+.active {
+  background: #0c2531;
+  color: white;
 }

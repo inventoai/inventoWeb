@@ -1,6 +1,6 @@
-<mat-card style="margin:0.5%; position:inherit;">
+<!-- <mat-card style="margin:0.5%; position:inherit;">
   <form>
-    <!-- <label for="email">Filter:</label>
+    <label for="email">Filter:</label>
     <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
       name="email">
     <label for="pwd">Show:</label>
@@ -10,7 +10,7 @@
     <button style="background-color: rgba(238, 28, 37, 1); border-radius: 3%; height: 50px; width: 200px;" matButton
       routerLink='/default/addbusinesslocation' routerLinkActive="active">Create New Location</button> -->
 
-    <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
+<!-- <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
       <mat-form-field fxFlex="25" appearance="outline">
         <mat-label>Filter</mat-label>
         <input matInput type="text" id="filter" placeholder="Type to Filter..." [(ngModel)]="searchText"
@@ -23,7 +23,7 @@
     </div>
 
   </form>
-</mat-card>
+</mat-card> -->
 
 <br> <br>
 
@@ -31,10 +31,32 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-search"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-local_printshop"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button class="tablebutton">
+            <i class="material-icons-new outline-delete_sweep"></i>
+          </button>
+        </th>
+        <th scope="col">
+          <button class="tablebutton" routerLink='/default/addbusinesslocation'>
+            <i class="material-icons-new outline-add"></i>
+          </button>
+        </th>
+      </tr>
+      <tr>
         <th scope="col">S.No</th>
         <th scope="col">Location Id</th>
         <th scope="col">Location Name</th>
-        <th scope="col">Actions</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -43,7 +65,8 @@
         <td>{{location.locationId}}</td>
         <td> {{location.locationName}} </td>
         <td>
-          <div style="width: 100%;">
+          Active
+          <!-- <div style="width: 100%;">
             <button mat-mini-fab color="check">
               <mat-icon>check</mat-icon>
             </button>
@@ -54,7 +77,7 @@
             <button mat-mini-fab color="delete" (click)="deleteUser(location.id)">
               <mat-icon>delete</mat-icon>
             </button>
-          </div>
+          </div> -->
 
         </td>
       </tr>

@@ -24,7 +24,7 @@ export class AccessUsersGroupComponent implements OnInit {
 
   createForm() {
     this.userAccessForm = this.fb.group({
-      username: '',
+      userName: '',
       password: '',
       roles: this.fb.group({
         advanceslotting: false,

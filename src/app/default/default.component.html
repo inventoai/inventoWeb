@@ -1,18 +1,20 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>
-      <img src={{logo}} alt="Logo" height="55" width="130" style="margin-top: 15px; margin-bottom: 8px;">
+    <mat-toolbar style="background-color: #0C2531;">
+      <img style="border-radius: 10px; margin-top: 3%;" src={{logo}} alt="Logo" height="50" width="100">
     </mat-toolbar>
     <mat-nav-list style="margin-top: 5px;" mode="side" opened>
-      <button matButton *ngFor="let item of menuItems1" mat-list-item [routerLink]="'./'+item"> <b>{{item |
-          titlecase}}</b>
+      <button *ngFor="let item of menuItems1" mat-list-item [routerLink]="'./'+item"
+        routerLinkActive="active">
+        <b>{{item |titlecase}}</b>
       </button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content style="position: relative;">
     <div class="fixed-header">
-      <mat-toolbar class="toolbar">
+      <mat-toolbar style="min-height: 30px !important; height: 50px !important; background-color: #0C2531;
+      color: white;">
         <mat-toolbar-row fxLayoutAlign="space-between center">
           <div fxLayout="row">
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
@@ -20,7 +22,7 @@
               <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
             <form *ngIf="deviceXs">
-              <input type="text" id="search" placeholder="Search ...." name="search">
+              <input type="text" placeholder="Search ...." name="search">
             </form>
             <form *ngIf="!deviceXs">
               <input type="text" id="search1" placeholder="Search ...." name="search">

@@ -1,45 +1,70 @@
-$background-light: #0C2531;
+$background-light: #0c2531;
 
-.sidenav-container {
-  height: 100%;
-  background-color: whitesmoke;
-}
-
-.toolbar{
-  background-color: #0C2531;
-  color: white;
-}
+// .sidenav-container {
+//   height: 100%;
+//   background-color: whitesmoke;
+// }
 .sidenav {
   //width: 250px;
   background-color: $background-light;
-  color: white;
+  // color: white;
 }
 
-.sidenav .mat-toolbar {
-  background: inherit;
-  color: white;
-}
-.sidenav button:hover {
-  background-color: #D1C4E9;
-  color: #0C2531;
-  }
-  .sidenav button {
-    background-color: #0C2531;
-    color: white;
-    border-radius: 5px 5px 5px 5px;
-    }
+// .sidenav .mat-toolbar {
+//   background: inherit;
+//   color: white;
+// }
+// .sidenav button:hover {
+//   background-color: #D1C4E9;
+//   color: #0C2531;
+//   }
+//   .sidenav button {
+//     background-color: #0C2531;
+//     color: white;
+//     border-radius: 5px 5px 5px 5px;
+//     }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
+// .mat-toolbar.mat-primary {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1;
+// }
 
 .mat-master {
   background-color: $background-light;
   color: #fff;
 }
 
+.vl {
+  height: 50px;
+  margin-left: 72%;
+  margin-right: 10%;
+  position: relative;
+}
+.v2 {
+  border-left: 0.1px solid white;
+  height: 50px;
+  margin: 1%;
+}
+
+.fixed-header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+}
+.fixed-content {
+  margin-top: 3.8em;
+  position: relative;
+  z-index: 1; /* put .gold-box above .green-box and .dashed-box */
+}
+
+.fixed-footer {
+  position: fixed;
+  z-index: 2; /* put .green-box above .dashed-box */
+  bottom: 0;
+  width: 100%;
+}
 .ft-legal {
   padding: 0.9375rem 1.875rem;
   background-color: white;
@@ -57,66 +82,19 @@ $background-light: #0C2531;
 }
 /* one before the last child */
 .ft-legal-list li:nth-last-child(1) {
-  flex: 1;       /* same as flex-grow: 1; */
+  flex: 1; /* same as flex-grow: 1; */
 }
 
+.mat-list-base .mat-list-item {
+  height: 35px !important;
+  width: 143px !important;
+  font-size: small;
+  border-radius: 10px;
+  background: #0c2531;
+  color: white;
+}
 
-
-
-.vl {
-  height: 50px;
-  margin-left: 72%;
-  margin-right: 10%;
-  position: relative;
-  }
-  .v2 {
-    border-left: 0.1px solid white;
-    height: 50px;
-    margin: 1%;
-    }
-
-  #search{
-   height: 40px;
-   width: 240px;
-   color: $background-light;
-  }
-
-  #search1{
-    height: 40px;
-    width: 300px;
-    color: $background-light;
-   }
-
-  .fixed-header{
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    top: 0;
-  }
-  .fixed-content{
-    margin-top: 5em;
-    position: relative;
-    z-index: 1; /* put .gold-box above .green-box and .dashed-box */
-  }
-  
-  .fixed-footer{
-    position: fixed;
-    z-index: 2; /* put .green-box above .dashed-box */
-    bottom: 0;
-    width: 100%;
-  }
-
-  .wrap {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .logo {
-    overflow: hidden;
-    text-align: left;
-    position: relative;
-    height: 0px;
-    background-color: white;
-    color: #1F6C8B;
-    font-family: Arial;
-  }
+.mat-list-base .mat-list-item.active {
+  background-color: white;
+  color: #0c2531;
+}

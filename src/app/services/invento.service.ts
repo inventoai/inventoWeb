@@ -40,5 +40,10 @@ export class InventoService {
   getProductRelationlist(): Observable<any> {
     return this.http.get(`${environment.inventoServer}/productRelation`);
   }
+  registerInventory(form: Object): Observable<any> {
+    let auth = JSON.parse(localStorage.getItem("credential")).id;
+    console.log(auth);
+    return this.http.post(`${environment.inventoServer}/inventory/${auth}`, form);
+  }
 }
 

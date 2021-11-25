@@ -1,0 +1,92 @@
+<mat-card style="margin-left: 2%; margin-top: 5%; margin-right: 2%; margin-bottom: 5%;">
+
+    <h2>Inventory Details Registration</h2>
+    <hr>
+    <div [hidden]="submitted">
+
+
+        <form novalidate #inventory="ngForm" (ngSubmit)="onSubmit()">
+            <div class="store" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" FxLayoutGap.lt-md="5px">
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>PhyInv Doc</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.phyInvDoc" #phyInvDoc="ngModel"
+                        name="phyInvDoc" required>
+                    <mat-error *ngIf="phyInvDoc.errors?.required">Phy Inv Doc is required.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Item</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.item" #item="ngModel" name="item" required>
+                    <mat-error *ngIf="item.errors?.required">Item is required.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Procedure </mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.procedure" name="procedure">
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>PI Status </mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.piStatus" name="piStatus">
+                </mat-form-field>
+
+            </div>
+            <div class="store" fxLayout="row" fxLayout.md_lt="column" fxLayoutGap="20px" FxLayoutGap.md_lt="5px">
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label> Acty Area</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.actyArea" #actyArea="ngModel" name="actyArea"
+                        required>
+                    <mat-error *ngIf="actyArea.errors?.required">ActyArea is required.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Bin</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.binNo" #binNo="ngModel" name="binNo"
+                        required>
+                    <mat-error *ngIf="binNo.errors?.required">BinNo is required.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label> Hgh-Lvl HU</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.hghLvlHU" name="hghLvlHU">
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Product</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.product" #product="ngModel" name="product"
+                        required>
+                    <mat-error *ngIf="product.errors?.required">Product is required.</mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="store" fxLayout="row" fxLayout.md_lt="column" fxLayoutGap="20px" FxLayoutGap.md_lt="5px">
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Prod.Desc.</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.prodDesc" name="prodDesc">
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Batch</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.batch" name="batch">
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Counter</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.counter" name="counter">
+                </mat-form-field>
+                <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Book Qty</mat-label>
+                    <input matInput type="text" [(ngModel)]="inventoryForm.bookQuantity" #bookQuantity="ngModel"
+                        name="bookQuantity" required>
+                    <mat-error *ngIf="bookQuantity.errors?.required">Book Quantity is required.</mat-error>
+                </mat-form-field>
+            </div>
+            <br>
+            <div fxLayout="row" fxLayout.md_lt="column" fxLayoutGap="20px" FxLayoutGap.md_lt="5px">
+                <div fxFlex="24">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="cancel()">Cancel</button>
+                </div>
+                <div fxFlex="24">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block"
+                        [disabled]="inventory.form.invalid">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div [hidden]="!submitted">
+        <h4>Successfully submitted!</h4>
+    </div>
+
+</mat-card>

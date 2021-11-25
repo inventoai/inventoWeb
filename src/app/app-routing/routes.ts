@@ -85,6 +85,7 @@ import { TestingComponent } from '../components/testing/testing.component';
 import { WebuserdetailsComponent } from '../components/usersform/webuserdetails/webuserdetails.component';
 import { WebUserUpdateComponent } from '../components/usersform/web-user-update/web-user-update.component';
 import { MLModelComponent } from '../testComponents/mlmodel/mlmodel.component';
+import { InventoryStoreComponent } from '../components/inventory/inventory-store/inventory-store.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -142,6 +143,9 @@ export const routes: Routes = [
                     { path: 'scan', component: ScanComponent },
                     { path: 'analyze', component: AnalyzeComponent }
                 ]
+            },
+            {
+                path: 'inventorystore', component: InventoryStoreComponent
             },
 
             {

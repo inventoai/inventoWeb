@@ -21,15 +21,15 @@
 
 
 
-<div style="margin-left: 2%;margin-top: 1%; margin-right: 2%; position:inherit;">
+<!-- <div style="margin-left: 2%;margin-top: 1%; margin-right: 2%; position:inherit;">
     <form>
-        <!-- <label for="email">Filter:</label>
+        <label for="email">Filter:</label>
         <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
             name="email">
         <label for="pwd">Show:</label>
         <select name="" id="">
             <option value="">5</option>
-        </select> -->
+        </select>
         <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxlayoutGap.lt-md="0px">
             <mat-form-field fxFlex="25" appearance="outline">
                 <mat-label>Filter</mat-label>
@@ -41,13 +41,35 @@
             </div>
         </div>
     </form>
-</div>
+</div> -->
 
 
-<div class="table-responsive" id="htmlData">
+<div style="margin-top: 1%; position:inherit;" class="table-responsive" id="htmlData">
 
     <table class="table">
         <thead>
+            <tr>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-search"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-delete_sweep"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-local_printshop"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button type="button" class="tablebutton" routerLink='/default/createcategory'>
+                        <i class="material-icons-new outline-add"></i>
+                    </button>
+                </th>
+            </tr>
             <tr>
                 <th scope="col">S.No</th>
                 <th scope="col">Product ID</th>

@@ -8,11 +8,11 @@
     <router-outlet></router-outlet>
 </div>
 
-
+<!-- 
 
 <div style="margin:0.5%; position:inherit;">
-    <form>
-        <!-- <label for="email">Filter:</label>
+    <form> -->
+<!-- <label for="email">Filter:</label>
         <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
             name="email">
         <label for="pwd">Show:</label>
@@ -23,7 +23,7 @@
         <div>
             <button class="btn btn-success btn-block" (click)="openPDF()"><b>Download PDF</b></button>
         </div> -->
-        <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGapt.lt-md="0px">
+<!-- <div class="actionBoard" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGapt.lt-md="0px">
             <mat-form-field fxFlex="25" appearance="outline">
                 <mat-label>Filter</mat-label>
                 <input matInput type="text" placeholder="Type to Filter..." [(ngModel)]="searchText" name="filter">
@@ -33,11 +33,28 @@
             </div>
         </div>
     </form>
-</div>
+</div> -->
 
 <div class="table-responsive" id="htmlData">
     <table class="table">
         <thead>
+            <tr>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-search"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-local_printshop"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-cloud_download"></i>
+                    </button>
+                </th>
+            </tr>
             <tr>
                 <th scope="col">S.No</th>
                 <th scope="col">Date</th>
