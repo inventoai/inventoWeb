@@ -134,6 +134,7 @@ import { WebuserdetailsComponent } from './components/usersform/webuserdetails/w
 import { WebUserUpdateComponent } from './components/usersform/web-user-update/web-user-update.component';
 import { MLModelComponent } from './testComponents/mlmodel/mlmodel.component';
 import { InventoryStoreComponent } from './components/inventory/inventory-store/inventory-store.component';
+import { WorkAllocationComponent } from './components/inventory/work-allocation/work-allocation.component';
 
 
 
@@ -240,7 +241,8 @@ const CustomBreakpoints = [{
     WebuserdetailsComponent,
     WebUserUpdateComponent,
     MLModelComponent,
-    InventoryStoreComponent
+    InventoryStoreComponent,
+    WorkAllocationComponent
 
 
 

@@ -1,0 +1,55 @@
+<mat-card>
+    <h3>Work Allocation</h3>
+    <hr>
+
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+
+            </thead>
+            <tbody id="htmlData">
+                <tr>
+                    <th scope="col">hyInv Doc</th>
+                    <th scope="col">Item</th>
+                    <th scope="col"> Doc. Year</th>
+                    <th scope="col">Acty Area</th>
+                    <th scope="col">Bin</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Batch</th>
+                    <th scope="col">SN</th>
+                    <th scope="col">Counter</th>
+                    <th scope="col"> Book Qty</th>
+                    <th scope="col"> Employee</th>
+                    <th scope="col">Allocate work</th>
+
+                </tr>
+                <tr *ngFor="let invento of inventory | async | filter:searchText; let i=index">
+                    <td>{{invento.phyInvDoc}}</td>
+                    <td>{{invento.item}}</td>
+                    <td>{{invento.date}} {{invento.time}} </td>
+                    <td>{{invento.actyArea}}</td>
+                    <td>{{invento.binNo}}</td>
+                    <td>{{invento.product}}</td>
+                    <td>{{invento.batch}}</td>
+                    <td scope="row"> {{i+1}} </td>
+                    <td>{{ invento.counter }}</td>
+                    <td> {{invento.bookQuantity}} </td>
+                    <td> user100 </td>
+                    <td>
+                        <div>
+                            <mat-select>
+                                <mat-option *ngFor="let emp of appUsers | async | filter:searchText; let i=index">
+                                    {{emp.userName}}
+                                </mat-option>
+                            </mat-select>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</mat-card>
