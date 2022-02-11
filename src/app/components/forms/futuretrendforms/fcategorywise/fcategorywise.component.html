@@ -21,30 +21,79 @@
                     </option>
                 </select>
             </mat-form-field>
-            <button fxFlex type="submit">Get Report</button>
+            <div fxFlex="20">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Get Report</button>
+            </div>
         </div>
     </form>
 </mat-card>
+<br>
 
-<div style="margin:0.5%; position:inherit;">
-    <form class="form-inline">
-        <label for="email">Filter:</label>
+<!-- <div style="margin-left: 1.5%; margin-top: 1%; margin-right: 1.5%; position:inherit;">
+    <form>
+         <label for="email">Filter:</label>
         <input type="text" id="email" placeholder="Type to Filter..." [(ngModel)]="searchText" autocomplete="off"
             name="email">
         <label for="pwd">Show:</label>
         <select name="" id="">
             <option value="">5</option>
-        </select>
+        </select> 
 
-        <div>
-            <button class="btn btn-success btn-block" (click)="openPDF()"><b>Download PDF</b></button>
+        <div class="actionBoard" fxlayout="row" fxLayout.lt-md="column" fxLayoutGap="50px" fxLayoutGap.lt-md="0px">
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>Filter</mat-label>
+                <input matInput type="text" id="filter" name="filter" placeholder="Type to filter..."
+                    [(ngModel)]="searchText">
+            </mat-form-field>
+            <div fxFlex="20">
+                <button class="btn btn-primary btn-lg btn-block" (click)="openPDF()">Download PDF</button>
+            </div>
         </div>
     </form>
-</div>
+</div> -->
+
 
 <div class="table-responsive" id="htmlData">
     <table class="table">
         <thead>
+            <tr>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-search"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-location_city"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button type="button" class="tablebutton" (click)="openPDF()">
+                        <i class="material-icons-new outline-cloud_download"></i>
+                    </button>
+                </th>
+
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-fullscreen"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button class="tablebutton">
+                        <i class="material-icons-new outline-local_printshop"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button type="button" class="tablebutton" routerLink="/default/workallocation">
+                        <i class="material-icons-new outline-open_in_new"></i>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button type="button" class="tablebutton" routerLink="/default/inventorystore">
+                        <i class="material-icons-new outline-add"></i>
+                    </button>
+                </th>
+            </tr>
             <tr>
                 <th scope="col">S.No</th>
                 <th scope="col">Location ID</th>
@@ -62,7 +111,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of data | filter:searchText ; let i = index">
-                <td  scope="row">{{ item.sn }}</td>
+                <td scope="row">{{ item.sn }}</td>
                 <td>{{item.locationid}}</td>
                 <td>{{item.locationname}}</td>
                 <td> {{item.productid}} </td>

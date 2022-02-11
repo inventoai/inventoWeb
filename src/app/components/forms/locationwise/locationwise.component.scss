@@ -1,59 +1,86 @@
-$background-moredark: #0C2531;
-
-.actionBoard{
-  font-size: 12px;
-  justify-content: space-between;
+.div1 {
+  margin: 1%;
+  position: inherit;
 }
 
+.actionBoard {
+  font-size: 12px;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.example-button-row button,
+.example-button-row a {
+  height: 38px;
+  width: 110px;
+  border: solid rgba(12, 37, 49, 0.6) 2px;
+  font-size: 16px;
+}
 
 .active {
-  background: #0C2531;
+  background: #0c2531;
   color: white;
 }
 
-
-th{
-border: 1px solid grey;
-border-collapse: collapse;
-padding: 5px;
-color: white;
-background-color:#0C2531 ;
-height: 50px;
-font-size: 15px;
-border-radius: 0px 0px 0px 0px;
-text-align: center;
+th {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 2px;
+  color: #0c2531;
+  background-color: #0c2531;
+  color: white;
+  height: 20px;
+  font-size: 9px;
+  border-radius: 0px 0px 0px 0px;
+  text-align: center;
 }
 
-td{
-border-collapse: collapse;
-padding: 5px;
-height: 50px;
-font-size: 13px;
-border-radius: 0px 0px 0px 0px;
-text-align: center;
+td {
+  border-collapse: collapse;
+  padding: 2px;
+  height: 20px;
+  font-size: 10px;
+  border-radius: 0px 0px 0px 0px;
+  text-align: center;
 }
-table{
-border-radius: 5px 5px 5px 5px;
-border-collapse: collapse;
-padding: 5px;
-margin-left: 1%;
-margin-right: 1%;
+table {
+  border-radius: 10px;
+  border-collapse: collapse;
+  // border: 1px solid #0c2531;
+  // padding: 5px;
+  // margin-left: 1%;
+  // margin-right: 1%;
 }
 
 table tr:nth-child(odd) {
-background-color: white;
+  background-color: white;
 }
 table tr:nth-child(even) {
-background-color: rgba(238, 28, 37, 0.0470588235294118);
+  background-color: rgba(238, 28, 37, 0.0470588235294118);
 }
 
 .table-responsive {
-overflow-y: auto;
-height: 330px;
-width: 99%;
+  overflow-y: auto;
+  height: 400px;
+  // width: 99%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 .table-responsive thead th {
-position: sticky;
-top: 0;
+  position: sticky;
+  top: 0;
 }
 
+.material-icons-new {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  // background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.tablebutton {
+  border-radius: 4px;
+}
